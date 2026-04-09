@@ -1,0 +1,670 @@
+/* ============================================================
+   components.css — 共通コンポーネント / notemo.net
+   ============================================================ */
+
+/* ============================================================
+   グローバルナビゲーション
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+}
+
+/* ロゴ */
+.header__logo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 4px;
+}
+
+.header__logo-text {
+  font-family: var(--font-en);
+  font-size: 44px;
+  color: var(--color-main);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.header__logo-text .bold {
+  font-weight: 700;
+}
+
+.header__logo-text .light {
+  font-weight: 300;
+}
+
+.header__logo-sub {
+  font-family: var(--font-ja);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--color-sub);
+  letter-spacing: 0.05em;
+}
+
+/* ナビリンク */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__nav-list a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.header__nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.header__nav-list a:hover {
+  color: var(--color-accent);
+}
+
+.header__nav-list a:hover::after {
+  width: 100%;
+}
+
+/* ハンバーガー（SP） */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.header__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-main);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.header__hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header__hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* SPメニュー */
+.header__sp-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 99;
+  padding: var(--space-md) var(--container-pad);
+  overflow-y: auto;
+}
+
+.header__sp-menu.is-open {
+  display: block;
+}
+
+.header__sp-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.header__sp-menu ul a {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   フッター
+   ============================================================ */
+
+.footer {
+  background: var(--color-main);
+  color: rgba(255,255,255,0.85);
+  padding: var(--space-xl) 0 var(--space-md);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: var(--space-md);
+}
+
+.footer__brand .logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--space-xs);
+}
+
+.footer__brand p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  margin-top: var(--space-xs);
+}
+
+.footer__nav h3,
+.footer__contact h3 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__nav ul a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  transition: color var(--transition);
+}
+
+.footer__nav ul a:hover {
+  color: #fff;
+}
+
+.footer__contact p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer__copyright {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer__bottom-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.footer__bottom-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  transition: color var(--transition);
+}
+
+.footer__bottom-links a:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ============================================================
+   ヒーローセクション
+   ============================================================ */
+
+.hero {
+  background: var(--color-main);
+  color: #fff;
+  padding: var(--space-2xl) 0 var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29,158,117,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(29,158,117,0.2);
+  color: #6dd5b0;
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: var(--space-md);
+}
+
+.hero__label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero__title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-md);
+  color: #fff;
+}
+
+.hero__title em {
+  font-style: normal;
+  color: #6dd5b0;
+}
+
+.hero__desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+  max-width: 480px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.hero__visual {
+  position: relative;
+}
+
+.hero__card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hero__mini-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.hero__mini-card .num {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.hero__mini-card .num span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero__mini-card p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   CTAバナー
+   ============================================================ */
+
+.cta-banner {
+  background: var(--color-accent);
+  padding: var(--space-xl) 0;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.cta-banner__text h2 {
+  color: #fff;
+  font-size: clamp(20px, 2.5vw, 26px);
+  margin-bottom: var(--space-xs);
+}
+
+.cta-banner__text p {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+}
+
+/* ============================================================
+   サービスカード
+   ============================================================ */
+
+.service-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-top: 4px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border-top-color: var(--color-accent);
+}
+
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+  font-size: 24px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  color: var(--color-main);
+  margin-bottom: var(--space-xs);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--color-sub);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+.service-card__link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.service-card__link::after {
+  content: '→';
+  transition: transform var(--transition);
+}
+
+.service-card:hover .service-card__link::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   実績数字セクション
+   ============================================================ */
+
+.stats {
+  background: var(--color-main);
+  padding: var(--space-xl) 0;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.stats__item .num {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stats__item .num span {
+  font-size: 0.5em;
+  font-weight: 500;
+}
+
+.stats__item p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ============================================================
+   事例カード
+   ============================================================ */
+
+.case-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+.case-card__img {
+  aspect-ratio: 16/9;
+  background: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 40px;
+}
+
+.case-card__body {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.case-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xs);
+}
+
+.case-card h3 {
+  font-size: 16px;
+  color: var(--color-main);
+  margin-bottom: var(--space-xs);
+}
+
+.case-card p {
+  font-size: 13px;
+  color: var(--color-sub);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   ブログカード
+   ============================================================ */
+
+.blog-card {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-card:last-child {
+  border-bottom: none;
+}
+
+.blog-card__meta {
+  flex-shrink: 0;
+  width: 80px;
+  padding-top: 4px;
+}
+
+.blog-card__date {
+  font-family: var(--font-en);
+  font-size: 12px;
+  color: var(--color-sub);
+}
+
+.blog-card__content h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 4px;
+  transition: color var(--transition);
+}
+
+.blog-card:hover .blog-card__content h3 {
+  color: var(--color-accent);
+}
+
+.blog-card__content p {
+  font-size: 13px;
+  color: var(--color-sub);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   レスポンシブ — コンポーネント
+   ============================================================ */
+
+@media (max-width: 1023px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__contact {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  /* ナビ */
+  .header__nav {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+
+  /* ヒーロー */
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .hero__visual {
+    display: none;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  /* CTA */
+  .cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* フッター */
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 数字 */
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
