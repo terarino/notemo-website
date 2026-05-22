@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO ※記事ごとに編集 -->
+  <title>中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く｜ノテモブログ</title>
+  <meta name="description" content="中小企業のDXが失敗する3つの構造的な理由を、IPA「DX動向2025」と2024年版中小企業白書の公的データから解説。経営層の関与不足・人材不足・投資設計の甘さに対する5つの回避策と、スモールスタートの具体的進め方を中小企業向けに整理しました。">
+  <link rel="canonical" href="https://notemo.net/blog/2026-05-23-chusho-dx-shippai.html">
+
+  <!-- OGP ※記事ごとに編集 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://notemo.net/blog/2026-05-23-chusho-dx-shippai.html">
+  <meta property="og:title"       content="中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く｜ノテモブログ">
+  <meta property="og:description" content="中小企業のDXが失敗する3つの構造的な理由を、IPA「DX動向2025」と2024年版中小企業白書の公的データから解説。経営層の関与不足・人材不足・投資設計の甘さに対する5つの回避策と、スモールスタートの具体的進め方を中小企業向けに整理しました。">
+  <meta property="og:image"       content="https://notemo.net/images/ogp/2026-05-23-chusho-dx-shippai.webp">
+  <meta property="og:site_name"   content="株式会社ノテモ">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+  <style>
+    /* 記事本文スタイル */
+    .article-header {
+      padding: var(--space-lg) 0 var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-lg);
+    }
+    .article-header .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+      font-size: 13px;
+      color: var(--color-sub);
+    }
+    .article-body h2 {
+      margin: var(--space-lg) 0 var(--space-sm);
+      padding-left: 14px;
+      border-left: 4px solid var(--color-accent);
+      color: var(--color-main);
+    }
+    .article-body h3 {
+      margin: var(--space-md) 0 var(--space-xs);
+      color: var(--color-main);
+    }
+    .article-body p {
+      margin-bottom: var(--space-sm);
+    }
+    .article-body ul, .article-body ol {
+      list-style: revert;
+      padding-left: 1.5em;
+      margin-bottom: var(--space-sm);
+    }
+    .article-body li { margin-bottom: 6px; }
+    .article-body a { color: var(--color-accent); }
+    .article-body blockquote {
+      background: var(--color-light);
+      border-left: 4px solid var(--color-accent);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: var(--space-sm) 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-md);
+      font-size: 14px;
+    }
+    .article-body th {
+      background: var(--color-main);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .article-body td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-body tr:nth-child(even) td {
+      background: var(--color-light);
+    }
+    .article-body .source-note {
+      font-size: 12px;
+      color: var(--color-sub);
+      margin-top: -12px;
+      margin-bottom: var(--space-sm);
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .article-sidebar {
+      position: sticky;
+      top: 88px;
+    }
+    .sidebar-card {
+      background: var(--color-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+    .sidebar-card h3 {
+      font-size: 14px;
+      color: var(--color-main);
+      margin-bottom: var(--space-sm);
+    }
+    .toc ol { list-style: decimal; padding-left: 1.2em; }
+    .toc li { margin-bottom: 6px; font-size: 13px; }
+    .toc a { color: var(--color-sub); }
+    .toc a:hover { color: var(--color-accent); }
+    @media (max-width: 767px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { display: none; }
+    }
+  </style>
+
+  <!-- 構造化データ: Article ※記事ごとに編集 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く",
+    "datePublished": "2026-05-23",
+    "dateModified": "2026-05-23",
+    "author": { "@type": "Organization", "name": "株式会社ノテモ" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "logo": { "@type": "ImageObject", "url": "https://notemo.net/images/logo.webp" }
+    }
+  }
+  </script>
+  <!-- 構造化データ: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",       "item": "https://notemo.net/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ",       "item": "https://notemo.net/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="../index.html" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+          <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
+          <div class="header__logo-sub">株式会社ノテモ</div>
+        </a>
+        <nav class="header__nav" aria-label="グローバルナビゲーション">
+          <ul class="header__nav-list">
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+          </ul>
+          <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
+        </nav>
+        <button class="header__hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__sp-menu" role="navigation">
+    <ul>
+      <li><a href="../services.html">サービス</a></li>
+      <li><a href="../cases.html">事例・実績</a></li>
+      <li><a href="../blog/index.html">ブログ</a></li>
+      <li><a href="../company.html">会社概要</a></li>
+      <li><a href="../contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol>
+          <li><a href="../">ホーム</a></li>
+          <li><a href="../blog/index.html">ブログ</a></li>
+          <li>中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く</li>
+        </ol>
+      </nav>
+
+      <!-- 記事ヘッダー -->
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="tag">DX</span>
+          <time datetime="2026-05-23">2026年05月23日</time>
+        </div>
+        <h1>中小企業のDXが失敗する3つの理由と回避策｜IPA・中小企業白書のデータで読み解く</h1>
+      </header>
+
+      <!-- 記事レイアウト -->
+      <div class="article-layout">
+
+        <!-- 本文 -->
+        <article class="article-body">
+
+<p>中小企業 dx 失敗の事例を整理すると、原因は技術選定よりも経営の意思決定構造に偏っていることがわかります。IPAの「DX動向2025」では、日本企業の85.1%でDXを推進する人材が不足しており、米独と比べて深刻な水準と指摘されています。さらに、従業員規模が小さくなるほどDX取組率が下がる傾向は、中小企業庁の調査でも繰り返し確認されてきました。本記事では、中小企業のDXが失敗する3つの構造的な理由と、それぞれに対する具体的な回避策を、公的データと実務経験を踏まえて解説します。</p>
+<h2 id="section-1">中小企業のDX現状｜公的データで見る「進まない構造」</h2>
+<p>中小企業 dx 失敗の議論に入る前に、現状を数値で押さえます。IPAの「DX動向2025」は、日本・米国・ドイツの3か国比較によって、日本企業のDXの現在地を多角的に明らかにしたレポートで、「DX取組と成果の状況」「技術利活用の状況」「DXを推進する人材」の3テーマで構成されています（出典: IPA「DX動向2025」 <a href="https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html" target="_blank" rel="noopener">https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html</a> ）。</p>
+<p>最も衝撃的な数字は、日本企業の85.1%でDXを推進する人材が不足しているという指摘です。米国・ドイツと比べて著しく高く、特に中小企業や一部の業界ではIT投資余力の乏しさや人材・ノウハウ不足から変革の優先度が下がりがちで、結果として企業規模・業種によってDXの進み具合に大きな差が生まれ、競争力の格差拡大につながっています（出典: IPA「DX動向2025」 <a href="https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html" target="_blank" rel="noopener">https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html</a> ）。</p>
+<p>2024年版中小企業白書でも、中小企業のデジタル化の取組状況に関する分析が掲載され、DXに取り組んでいる企業の方が業績や生産性で優位に立つ傾向が示されています（出典: 中小企業庁「2024年版中小企業白書 第7節DX」 <a href="https://www.chusho.meti.go.jp/pamflet/hakusyo/2024/chusho/b1_4_7.html" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/pamflet/hakusyo/2024/chusho/b1_4_7.html</a> ）。にもかかわらずDXが進まない理由を構造的に整理すると、本記事で扱う3つの失敗パターンに集約されます。</p>
+<h2 id="section-2">失敗理由1：経営層の関与不足｜「IT部門に任せきり」が招く頓挫</h2>
+<p>中小企業 dx 失敗の最大要因は、経営層がDXを「IT部門の課題」と切り分けてしまうことです。IPAの過去調査では、IT分野に見識のある役員割合が3割未満と答えた企業が全体の8割以上に上っており、経営層の理解不足がDX停滞の根本にあると指摘されています（出典: IPA「日本の中小企業のDX推進についての考察」 <a href="https://www.ipa.go.jp/digital/chousa/discussion-paper/dxwp2023-sme.html" target="_blank" rel="noopener">https://www.ipa.go.jp/digital/chousa/discussion-paper/dxwp2023-sme.html</a> ）。</p>
+<p>経営層の関与が不足すると、3つの問題が連鎖します。第一は、投資判断が遅れることです。DXは複数年にわたる継続投資が前提のため、経営層が予算配分・優先順位付けに直接関与しないと、毎年の単年予算交渉で削られやすくなります。第二は、部門横断の調整がつかないことです。営業・製造・経理など複数部門にまたがるDXでは、現場間の利害調整に経営層の意思決定が不可欠です。第三は、定着化フェーズで失速することです。ツールを導入しても運用が乗らないとき、「現場の問題」とせず、業務プロセスそのものを見直す経営判断ができるかが分かれ目になります。</p>
+<p>回避策として、弊社が支援してきた中小企業で効果が出やすかったのは、月次の経営会議に「DX進捗議題」を恒久議題として組み込むことです。経営層が直接、KPIの達成状況・ボトルネック・次月施策を把握する仕組みを作ると、IT部門任せの構造が崩れます。あわせて、経営層自身が生成AIや基幹システムに触れる時間を確保することで、現場と同じ目線で議論できる体制が作れます。</p>
+<h2 id="section-3">失敗理由2：DX人材の不足｜「採用」と「育成」のどちらにも踏み込めない</h2>
+<p>中小企業 dx 失敗の二つ目の構造要因は、DX人材の不足です。IPAの「DX動向2025」が示す85.1%という人材不足率は、中小企業ではさらに厳しく現れます。経営資源が限られる中小企業では、外部からの専門人材採用は給与水準や働き方の面で大企業との競合に勝ちにくく、内部での育成も「教える側のスキルがない」「育成期間中の業務をカバーする余力がない」という二重の壁に直面します（出典: IPA「DX動向2025」 <a href="https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html" target="_blank" rel="noopener">https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html</a> ）。</p>
+<p>人材不足が引き起こす失敗パターンとして、ベンダー丸投げ型と内製過信型の2極化があります。ベンダー丸投げ型は、要件定義・運用設計までベンダー任せにすることで、導入後の改修や運用変更が高コストになり、当初の投資効果が出ません。内製過信型は、社内の意欲ある社員に過剰な負荷をかけ、その社員の離職や疲弊によってDXが頓挫します。どちらも、DX人材を「点」ではなく「役割の組み合わせ」として設計できていないことが原因です。</p>
+<p>中小企業庁の白書でも、デジタル化を推進する人材の確保や育成が大きな課題であることが繰り返し指摘されています（出典: 中小企業庁「2023年版小規模企業白書 第2節中小企業のデジタル化推進に向けた取組」 <a href="https://www.chusho.meti.go.jp/pamflet/hakusyo/2023/shokibo/b2_2_2.html" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/pamflet/hakusyo/2023/shokibo/b2_2_2.html</a> ）。回避策は、人材を「企画役・推進役・運用役」の3層に分けて設計することです。企画役は経営層に近い意思決定者、推進役は社内のDXリーダー（兼務可）、運用役は現場のキーパーソン（兼務可）です。すべてを外部に頼らず、外部支援は推進役を補強するアドバイザリー型で組み合わせると、属人化と丸投げの両方を避けられます。</p>
+<h2 id="section-4">失敗理由3：初期投資の規模を間違える｜「いきなり全社改革」の罠</h2>
+<p>中小企業 dx 失敗の三つ目は、投資規模と回収計画の設計ミスです。最初から多額のIT投資を実行する場合、数年での費用回収が社内で求められ、結果的に苦しむケースが少なくありません。段階的にIT投資を実施することの重要性は、中小企業庁の白書でも示されています（出典: 中小企業庁「2024年版中小企業白書 第7節DX」 <a href="https://www.chusho.meti.go.jp/pamflet/hakusyo/2024/chusho/b1_4_7.html" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/pamflet/hakusyo/2024/chusho/b1_4_7.html</a> ）。</p>
+<p>失敗パターンの典型は3つあります。第一は、ERPやSFA・CRMなどの大規模システムを最初に導入し、現場の業務がシステムに追いつかないまま使われなくなるケースです。第二は、コンサル費用が初期投資の大半を占め、ツール導入後の運用予算が枯渇するケースです。第三は、複数年のクラウドサービス契約を一括で結び、途中で要件が合わなくなっても解約・乗り換えができないケースです。いずれも、「大きく始めて大きく失敗する」構造になっています。</p>
+<p>回避策は、スモールスタート設計を組み込むことです。具体的には、最初の3〜6か月で1部門・1業務プロセスに絞ったパイロット導入を行い、定量効果（時間削減・エラー率低下・売上貢献）を測定してから次の領域に展開する流れを作ります。投資規模も初年度は年間売上の0.5〜1%程度に抑え、効果が出た段階で段階的に増額する設計が、中小企業には現実的です。デジタル化・AI導入補助金など公的支援を組み合わせれば、初期負担はさらに圧縮できます。</p>
+<h2 id="section-5">失敗を避けるための実装プラン｜中小企業のための5ステップ</h2>
+<p>3つの失敗理由を踏まえ、中小企業がDXを失敗させないための5ステップを整理します。中小企業 dx 失敗の多くは、この5ステップのどこかを飛ばすことで発生します。</p>
+<p>第一ステップは、現状業務の可視化と優先順位付けです。経営層と現場が一緒に業務フローを書き出し、時間がかかっている工程・属人化している工程・顧客接点のボトルネックを特定します。第二ステップは、DX推進体制の明確化です。経営層の責任者、推進リーダー（兼務可）、現場のキーパーソンを指名し、月次の進捗確認の場を設計します。</p>
+<p>第三ステップは、パイロット領域の選定とツール検討です。1〜2業務に絞り、登録されたITツールから比較検討します。第四ステップは、3〜6か月のパイロット実施と効果測定です。定量・定性両面で効果を見て、続行・拡大・撤退を判断します。第五ステップは、横展開と継続改善です。パイロットで得た知見を他部門に水平展開し、定期的な見直しの仕組みを作ります。</p>
+<p>ここで重要なのは、各ステップで「やめる判断」をしてもよいと事前に合意しておくことです。継続を前提にしない設計が、結果的に失敗コストを最小化します。中小企業庁の各種白書でも、段階的アプローチの重要性が継続して指摘されており、一足飛びの全社改革より、小さな成功体験の積み上げが定着につながると示唆されています（出典: 中小企業庁「中小企業白書・小規模企業白書」 <a href="https://www.chusho.meti.go.jp/pamflet/hakusyo/index.html" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/pamflet/hakusyo/index.html</a> ）。</p>
+<h2 id="section-6">DX推進を後押しする公的支援3つ｜補助金・専門家派遣・診断ツール</h2>
+<p>中小企業 dx 失敗を避けるためには、自社単独で抱え込まず、公的支援制度を組み合わせる選択肢があります。中小企業向けには無料または低コストで活用できる支援が複数用意されています。</p>
+<p>第一は、デジタル化・AI導入補助金2026です。ITツール導入費用の最大1/2（条件次第で2/3）、上限450万円までを補助する制度で、生成AI・業務自動化ツールも対象範囲に含まれます。スモールスタートで効果検証してから本格導入する設計と相性が良く、投資負担を抑えつつDX推進を進められます（出典: 中小機構「デジタル化・AI導入補助金2026」 <a href="https://it-shien.smrj.go.jp/" target="_blank" rel="noopener">https://it-shien.smrj.go.jp/</a> ）。</p>
+<p>第二は、よろず支援拠点・専門家派遣制度です。全国の中小企業支援機関で、DX推進・IT活用に関する無料相談・専門家派遣が利用できます。社内に推進役がいない段階で、外部視点での課題整理に活用すると、初期の意思決定がスムーズになります（出典: 中小企業庁「中小企業向け補助金・総合支援サイト」 <a href="https://www.chusho.meti.go.jp/" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/</a> ）。第三は、みらデジ経営チェックなどの自己診断ツールです。自社のデジタル化度合いを業種平均と比較できる無料ツールで、現状の立ち位置を客観的に把握する出発点として有効です。これらの支援を組み合わせることで、中小企業 dx 失敗のリスクを構造的に減らせます。</p>
+<h2 id="section-7">まとめ｜中小企業のDXは「経営・人材・投資設計」の3点で決まる</h2>
+<p>中小企業 dx 失敗の構造をまとめると、技術選定よりも、経営層の関与・人材設計・投資規模という3つの経営判断で結果が決まります。IPAの「DX動向2025」が示す人材不足の深刻さ、中小企業白書が示すデジタル化と業績の相関は、いずれも「やる・やらない」ではなく「どうやるか」が問われている段階に入ったことを示しています。</p>
+<p>最後に、DXを止めない経営判断のチェックポイントを3つ補足します。第一は、半年に一度、外部視点でDX進捗をレビューする機会を設けることです。社内だけで議論していると判断が硬直化しやすく、外部アドバイザーや同業他社事例との比較で課題が見えやすくなります。第二は、撤退・縮小・継続の判断基準を事前に決めておくことです。「3か月後に利用率が30%未満なら撤退」など定量基準があると、意思決定が遅延しません。第三は、成功事例を社内で可視化することです。1部門の成果を社内報や全社会議で共有すると、他部門での横展開速度が大きく上がります。</p>
+<p>弊社では、中小企業のDX推進を「業務可視化→体制設計→パイロット→効果測定→横展開」の伴走型で支援しています。経営層と現場の橋渡し、補助金活用を含む投資計画、人材を絞ったスモールスタート設計など、自社単独では着手しにくい部分を補完します。「自社のDXがどこでつまずいているか」「次の一歩をどう設計すべきか」など、まずは60分の無料相談からお気軽にご相談ください。</p>
+
+
+        </article>
+
+        <!-- サイドバー -->
+        <aside class="article-sidebar">
+          <div class="sidebar-card toc">
+            <h3>目次</h3>
+            <ol>
+              <li><a href="#section-1">中小企業のDX現状｜公的データで見る「進まない構造」</a></li>
+              <li><a href="#section-2">失敗理由1：経営層の関与不足｜「IT部門に任せきり」が招く頓挫</a></li>
+              <li><a href="#section-3">失敗理由2：DX人材の不足｜「採用」と「育成」のどちらにも踏み込めない</a></li>
+              <li><a href="#section-4">失敗理由3：初期投資の規模を間違える｜「いきなり全社改革」の罠</a></li>
+              <li><a href="#section-5">失敗を避けるための実装プラン｜中小企業のための5ステップ</a></li>
+              <li><a href="#section-6">DX推進を後押しする公的支援3つ｜補助金・専門家派遣・診断ツール</a></li>
+              <li><a href="#section-7">まとめ｜中小企業のDXは「経営・人材・投資設計」の3点で決まる</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-card">
+            <h3>お問い合わせ</h3>
+            <p style="font-size:13px; color:var(--color-sub); margin-bottom:var(--space-sm);">EC・DX・AIについてお気軽にご相談ください。</p>
+            <a href="../contact.html" class="btn btn--primary" style="width:100%; justify-content:center;">無料相談する</a>
+          </div>
+        </aside>
+
+      </div><!-- /.article-layout -->
+
+    </div><!-- /.container -->
+
+    <!-- CTAバナー -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__text">
+            <h2>まずはご相談ください</h2>
+            <p>課題を整理するだけでも構いません。お気軽にお問い合わせください。</p>
+          </div>
+          <a href="../contact.html" class="btn btn--white btn--lg">無料相談を申し込む</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="logo-text">株式会社ノテモ</div>
+          <p>EC支援・業務DX・AI活用の3領域で<br>中小企業の成長を伴走型でサポートします。</p>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <p>お気軽にお問い合わせください。</p>
+          <a href="../contact.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8);">お問い合わせはこちら</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="year"></span> 株式会社ノテモ All Rights Reserved.</p>
+        <div class="footer__bottom-links"><a href="../privacy.html">プライバシーポリシー</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
