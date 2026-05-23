@@ -7,7 +7,56 @@
 - 日本語で作業・コミットメッセージを書く
 - 全ページに OGP・canonical・構造化データを設置
 - 画像は WebP 形式、200KB 以下に最適化
-- main ブランチへ push で GitHub Pages が自動デプロイ
+- claude-items の main に push → GitHub Actions が `terarino/notemo-website` (= notemo.net 配信源) に自動同期 → GitHub Pages がデプロイ
+
+## デプロイ経路
+
+```
+claude-items/projects/notemo-website/  (ソース正本)
+        │  main push
+        ▼
+.github/workflows/sync-notemo-website.yml  (GitHub Actions)
+        │  rsync --delete (scripts/ 除外)
+        ▼
+terarino/notemo-website main  (GitHub Pages 配信源)
+        │  Pages 自動デプロイ
+        ▼
+https://notemo.net/
+```
+
+### 初期セットアップ (1 回のみ)
+
+Deploy Key 方式 (PAT より明示的かつ無期限。本リポジトリ専用 / 推奨)：
+
+```bash
+# 1. ed25519 鍵ペア生成 (passphrase なし)
+ssh-keygen -t ed25519 -f /tmp/notemo-deploy-key -N "" -C "notemo-website-sync@claude-items"
+
+# 2. 公開鍵を terarino/notemo-website に Deploy Key として登録 (write 有効)
+gh repo deploy-key add /tmp/notemo-deploy-key.pub \
+  --repo terarino/notemo-website \
+  --title "claude-items sync workflow" \
+  --allow-write
+
+# 3. 秘密鍵を claude-items の secret に登録
+gh secret set NOTEMO_WEBSITE_DEPLOY_KEY \
+  --repo terarino/claude-items \
+  --body "$(cat /tmp/notemo-deploy-key)"
+
+# 4. ローカルの秘密鍵は削除 (もう不要)
+rm /tmp/notemo-deploy-key /tmp/notemo-deploy-key.pub
+
+# 5. workflow を手動実行して動作確認
+gh workflow run sync-notemo-website.yml --repo terarino/claude-items --ref main
+gh run watch --repo terarino/claude-items
+```
+
+または `terarino/notemo-website` の Settings → Deploy keys から GUI でも登録可能。
+
+### 注意
+
+- `scripts/` 配下 (export_from_scf.py 等の開発専用スクリプト) は配信対象外として workflow で除外
+- ソース正本は **常に claude-items 側**。`terarino/notemo-website` を直接編集すると次回 sync で上書きされる
 
 ## ブランドカラー
 
