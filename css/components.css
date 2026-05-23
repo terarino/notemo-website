@@ -1197,6 +1197,13 @@
   grid-template-columns: 1fr 280px;
   gap: var(--space-lg);
   align-items: start;
+  min-width: 0;
+}
+
+/* grid 子要素のデフォルト min-width:auto により、内部の <table> 等が大きい場合に
+   親 (.article-body) 自体が画面外まで膨張してしまうのを防ぐ */
+.article-layout > * {
+  min-width: 0;
 }
 
 .article-sidebar {
@@ -1239,15 +1246,26 @@
   margin: var(--space-sm) 0;
 }
 
-/* 表 — 横スクロール用ラッパが理想だが、現状の table も SP で破綻しないよう block レイアウト化 */
+/* 表 — 横スクロール用ラッパ (.table-wrap) で囲む方式に統一。
+   <div class="table-wrap"><table>...</table></div> の構造で、table 自身は
+   通常の table-layout を維持しつつ、ラッパ側で overflow-x: auto を行う */
+.article-body .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-md);
+  max-width: 100%;
+}
+
 .article-body table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: var(--space-md);
   font-size: 14px;
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+}
+
+/* .table-wrap 内の table は margin を wrap が持つので 0 に */
+.article-body .table-wrap > table {
+  margin-bottom: 0;
 }
 
 .article-body th {
