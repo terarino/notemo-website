@@ -103,6 +103,33 @@ notemo-website/
 3. OGP 画像を `images/ogp/<YYYY-MM-DD>-<slug>.webp` に配置 (WebP 200KB 以下)
 4. `git add / commit / push`
 
+## レスポンシブ / レイアウト改修時のレビュー手順 (必須)
+
+CSS / HTML レイアウトを変更したときは、**静的検証だけで完了判定しない**。
+過去 (2026-05-23) に grid 子要素の `min-width: auto` 起因の崩れを静的検証で見逃し、
+スマホ表示で `<article>` が画面幅の 1.5 倍まで膨張する事故があった。以下を必ず実行する。
+
+1. ローカル HTTP サーバー起動: `python3 -m http.server 8765 --directory projects/notemo-website`
+2. ヘッドレス Chrome + Playwright (`playwright-core`) で iPhone サイズ (375x812) を作成
+3. 全主要ページ (index / services / cases / company / contact / blog/ / 各記事) を巡回し:
+   - `document.documentElement.scrollWidth === window.innerWidth` を確認
+   - `document.body.scrollWidth === window.innerWidth` を確認
+   - 一時的に `html.style.overflow = body.style.overflow = 'visible'` にして
+     `getBoundingClientRect().right > vw` の要素を列挙 (overflow:clip で隠れている真の犯人を可視化)
+4. はみ出しゼロを確認できて初めてレビュー完了
+
+### レイアウト系で踏みやすい地雷
+
+- **grid / flex 子要素のデフォルト `min-width: auto`**: 内部に table・長い URL・長い英単語が
+  あると、親要素が画面外まで膨張する。grid/flex 親と直接子に **`min-width: 0` を明示**する
+- **table の SP 対応**: `display: block; overflow-x: auto` は内部 tr/thead/tbody の伸長を
+  止められないので不十分。**`<div class="table-wrap">` でラップ + ラッパ側に overflow-x: auto** が確実
+  (本サイトの blog 記事はこのパターンを採用済み)
+- **長い URL / 英単語**: `body { overflow-wrap: anywhere; word-break: break-word; }` で
+  ほぼ防げる (css/style.css 設定済み)
+- **html / body の `overflow-x: hidden`**: `sticky` を壊すことがあるので **`overflow-x: clip`** を使う
+  (clip は scroll container を作らないので sticky 副作用なし)
+
 ## Git コミット prefix
 
 | prefix | 用途 |
