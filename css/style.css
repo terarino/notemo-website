@@ -48,6 +48,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* スマホで子要素が画面幅を超えても、ページ全体は横スクロールさせない */
+  overflow-x: clip;
 }
 
 body {
@@ -56,6 +58,11 @@ body {
   background: var(--color-bg);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  /* 同上の保険 */
+  overflow-x: clip;
+  /* 長い URL や英単語をはみ出さず折り返す */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 img {
