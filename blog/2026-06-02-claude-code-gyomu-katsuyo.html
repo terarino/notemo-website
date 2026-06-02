@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO ※記事ごとに編集 -->
+  <title>Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモブログ</title>
+  <meta name="description" content="Claude Codeの業務活用を非エンジニア向けにやさしく解説します。ChatGPTとの違い、小売/EC現場の自動化ユースケース、上場IT企業の自社事例、安全運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた、今日から始められる実践ガイドです。">
+  <link rel="canonical" href="https://notemo.net/blog/2026-06-02-claude-code-gyomu-katsuyo.html">
+
+  <!-- OGP ※記事ごとに編集 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://notemo.net/blog/2026-06-02-claude-code-gyomu-katsuyo.html">
+  <meta property="og:title"       content="Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモブログ">
+  <meta property="og:description" content="Claude Codeの業務活用を非エンジニア向けにやさしく解説します。ChatGPTとの違い、小売/EC現場の自動化ユースケース、上場IT企業の自社事例、安全運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた、今日から始められる実践ガイドです。">
+  <meta property="og:image"       content="https://notemo.net/images/ogp/2026-06-02-claude-code-gyomu-katsuyo.webp">
+  <meta property="og:site_name"   content="株式会社ノテモ">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+
+  <!-- 構造化データ: Article ※記事ごとに編集 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude Codeの業務活用とは？非エンジニアの自動化入門",
+    "datePublished": "2026-06-02",
+    "dateModified": "2026-06-02",
+    "author": { "@type": "Organization", "name": "株式会社ノテモ" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "logo": { "@type": "ImageObject", "url": "https://notemo.net/images/logo.webp" }
+    }
+  }
+  </script>
+  <!-- 構造化データ: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",       "item": "https://notemo.net/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ",       "item": "https://notemo.net/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Claude Codeの業務活用とは？非エンジニアの自動化入門" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="../index.html" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+          <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
+          <div class="header__logo-sub">株式会社ノテモ</div>
+        </a>
+        <nav class="header__nav" aria-label="グローバルナビゲーション">
+          <ul class="header__nav-list">
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+          </ul>
+          <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
+        </nav>
+        <button class="header__hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__sp-menu" role="navigation">
+    <ul>
+      <li><a href="../services.html">サービス</a></li>
+      <li><a href="../cases.html">事例・実績</a></li>
+      <li><a href="../blog/index.html">ブログ</a></li>
+      <li><a href="../company.html">会社概要</a></li>
+      <li><a href="../contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol>
+          <li><a href="../">ホーム</a></li>
+          <li><a href="../blog/index.html">ブログ</a></li>
+          <li>Claude Codeの業務活用とは？非エンジニアの自動化入門</li>
+        </ol>
+      </nav>
+
+      <!-- 記事ヘッダー -->
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="tag">AI活用</span>
+          <time datetime="2026-06-02">2026年06月02日</time>
+        </div>
+        <h1>Claude Codeの業務活用とは？非エンジニアの自動化入門</h1>
+      </header>
+
+      <!-- 記事レイアウト -->
+      <div class="article-layout">
+
+        <!-- 本文 -->
+        <article class="article-body">
+
+<h3>この記事の要点</h3>
+<p>Claude Code の業務活用を、ChatGPT などのチャット型 AI は触ったことがある非エンジニア向けにやさしく整理します。チャット型 AI との違いから、小売・EC 現場の具体的な自動化、弊社が支援した上場 IT 企業の事例、安全な運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた実践的な入門ガイドです。</p>
+<p><strong>ポイント</strong></p>
+<ul>
+<li>Claude Code は「答える AI」ではなく、ファイルを操作して作業まで実行する AI エージェントです</li>
+<li>受注 CSV の整形・在庫や売上の週次集計・商品説明文の下書きなど、小売や EC の定型業務を任せられます</li>
+<li>弊社が上場 IT 企業のセキュリティチェック業務を自動化した支援事例を、業務の流れに沿って紹介します</li>
+<li>CLAUDE.md・Git・権限管理・マスキングを押さえれば、非エンジニアでも安全に運用できます</li>
+<li>業務の棚卸しから小さく始め、確認工程を残す半自動運用にすると定着しやすくなります</li>
+</ul>
+<hr />
+<p>「ChatGPT は毎日使っているけれど、毎月くり返す集計やレポート作成そのものを丸ごと任せたい」。そう感じている中小企業や小売・EC の現場は少なくありません。そこで注目されているのが Claude Code の業務活用です。ただ、名前に「Code」と付くため、非エンジニアの自社では扱えないのではないかと不安に思う方も多いはずです。本記事を読むと、Claude Code がチャット型 AI と何が違うのか、小売・EC のどんな業務を自動化できるのか、そして安全に運用し現場へ定着させるにはどうすればよいのかが、具体的な手順と弊社の支援事例を通じて分かります。</p>
+<h2 id="section-1">Claude Codeとは何か｜チャット型AI（ChatGPT等）との決定的な違い</h2>
+<p>ChatGPT を触ったことがある方ほど、Claude Code を「高機能なチャット AI の一種」と捉えがちです。しかし両者は役割が大きく異なります。この章では、Claude Code の業務活用を理解する前提として、チャット型 AI との違いをはっきりさせておきます。</p>
+<h3>Claude Codeは「答えるAI」ではなく「作業するAIエージェント」</h3>
+<p>ChatGPT のようなチャット型 AI は、質問に対して文章で「答える」ことが中心です。一方の Claude Code は、Anthropic の公式ドキュメントによると、ターミナル上で動作し、手元のファイルを直接読み書きしたりコマンドを実行したりできる、エージェント型のツールとして位置づけられています（出典: Anthropic「Claude Code 公式ドキュメント Overview」 <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">https://code.claude.com/docs/en/overview</a> ／仕様は2026年6月時点）。つまり「答える」だけでなく、実際の作業まで肩代わりしてくれる点が決定的な違いです。</p>
+<h3>ChatGPTとの使い分け早見表（会話で考える／ファイルを動かす）</h3>
+<p>両者は競合ではなく、得意分野が異なる道具だと考えると整理しやすくなります。アイデア出しや文章の壁打ちなど「会話で考える」場面はチャット型 AI が向いています。これに対して、複数ファイルの一括処理や集計、決まった形式への変換といった「手元のデータを動かす」場面では Claude Code が力を発揮します。両者を併用すれば、考える作業と手を動かす作業の両方をカバーできます。</p>
+<h3>なぜ「コードを書けない」人でも使えるのか</h3>
+<p>Claude Code への指示は、プログラミング言語ではなく日本語の自然な言葉で行えます。「このフォルダの CSV を月別に集計して」と伝えれば、必要な処理を組み立てて実行してくれます。利用者がやるべきことは、何をしてほしいかを言葉で明確にすることであり、コードを書けるかどうかは本質ではありません。だからこそ、非エンジニアの中小企業でも Claude Code の業務活用に踏み出せるのです。</p>
+<h2 id="section-2">非エンジニアがClaude Codeで自動化できる業務｜中小・小売/EC現場の具体ユースケース</h2>
+<p>前章で「作業まで実行する」点を押さえたところで、では実際にどんな業務を任せられるのかが気になるはずです。ここでは一般的な事例の羅列ではなく、受注・在庫・接客文といった小売や EC の現場でくり返し発生する定型業務に絞り、明日から試せる単位で 5 つ紹介します。中小企業の生成 AI 活用の全体像は別記事（ <a href="https://notemo.net/blog/2026-04-08-sme-ai-utilization.html">https://notemo.net/blog/2026-04-08-sme-ai-utilization.html</a> ）でも整理していますので、あわせてご覧ください。</p>
+<h3>受注CSVの整形・名寄せ・フォーマット統一</h3>
+<p>複数のモールや自社サイトから出力した受注 CSV は、列の並びや日付の書式がばらばらで、毎回手作業でそろえている現場が多いものです。Claude Code には「この CSV を指定の列順に並べ替え、日付を YYYY-MM-DD にそろえて」と日本語で指示するだけで整形できます。全角と半角が混在した顧客名の表記ゆれなども、ルールを伝えれば一括で名寄せできます。</p>
+<h3>在庫・売上の週次集計と定例レポート生成</h3>
+<p>毎週決まった形でまとめる在庫や売上のレポートは、Claude Code の業務活用が最も効果を出しやすい領域のひとつです。元データのファイルを渡し、集計の観点と出力したい体裁を伝えれば、毎週の定例レポートの下書きまで作成できます。担当者は数字の確認と気づきの追記に集中でき、作成そのものの手間を大きく減らせます。</p>
+<h3>商品説明文・メルマガ下書きの量産</h3>
+<p>新商品の説明文やメルマガの本文も、トーンと必須要素を指定すれば下書きをまとめて作れます。テンプレートと商品データを組み合わせ、複数パターンを一度に生成することも可能です。ただし、そのまま公開するのではなく、人の目で表現や事実関係を整える前提で使うのが安全です。</p>
+<h3>問い合わせ返信案・議事録要約</h3>
+<p>よくある問い合わせへの返信案づくりや、定例会議の議事録要約も任せられます。過去の対応文面を読み込ませて返信のたたき台を作る、長い議事メモから要点と次のアクションを抽出する、といった使い方が現実的です。</p>
+<h3>「向く業務／向かない業務」を見分ける基準</h3>
+<p>向いているのは、手順が決まっていて、入力と出力の形がはっきりしている定型業務です。逆に、毎回判断が分かれる例外処理や、最終的な意思決定そのものは AI に丸投げすべきではありません。効果（削減できる時間など）は業務量や手順の整い方によって変わるため、最初から大きな数値を期待しすぎないことも大切です。</p>
+<h2 id="section-3">【自社事例】上場IT企業のセキュリティチェック業務をClaude Codeで自動化した話</h2>
+<p>ここまでは一般的なユースケースを見てきましたが、抽象論だけでは現場での手触りが伝わりにくいものです。そこで、弊社が実際に支援した上場 IT 企業 A 社の事例を、業務の流れに沿って紹介します。なお、支援対象企業はセキュリティ上の理由から匿名化しており、ツールの仕様に関する記述は Anthropic の公式ドキュメントに準拠しています。一次体験として語る部分と、ツール仕様として確認できる部分は区別してお読みください。</p>
+<h3>着手前の課題（手作業のチェック工程に何時間かかっていたか）</h3>
+<p>A 社では、リリース前のセキュリティチェックを担当者が手作業で確認しており、対象が増えるほど工数がかさみ、確認のばらつきも課題になっていました。属人的な作業のため、担当者が変わると品質が揺れる懸念もありました。削減できる時間は対象の量や運用次第で幅がありますが、定型的な確認の比率が高いほど効果が出やすい状況でした。</p>
+<h3>どうClaude Codeに置き換えたか（半自動運用の設計）</h3>
+<p>弊社が設計したのは、完全自動ではなく「半自動運用」です。Claude Code に確認手順をルールとして渡し、定型的なチェックの一次処理を任せたうえで、最終判断は人が行う形にしました。ツールの動作やルールの固定方法は、公式ドキュメントの仕様（ <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">https://code.claude.com/docs/en/overview</a> ）に沿って設計しています。いきなり全工程を置き換えるのではなく、定型部分から段階的に広げたことが、現場の負担を抑える鍵になりました。</p>
+<h3>効果と、現場が受け入れた理由</h3>
+<p>現場が受け入れた最大の理由は、AI が判断を奪うのではなく、人の確認を残したまま下準備を肩代わりする設計だった点です。美談として完成度を強調するつもりはなく、運用が定着するまでにはルールの微調整も重ねました。それでも、定型作業の負担が軽くなり、担当者がより重要な判断に時間を割けるようになったことは、明確な手応えとして残りました。</p>
+<h2 id="section-4">非エンジニアでも安全に使うための設定と運用ルール</h2>
+<p>便利さの一方で、機密情報の扱いや誤操作が不安だという声は当然あります。この章では、その不安に応えるために、最低限おさえておきたい安全設計を CLAUDE.md・Git・権限・マスキングの 4 つの観点から、何のために必要かという順で整理します。Claude Code を業務に活用するうえで土台となる部分です。</p>
+<h3>CLAUDE.mdでルールと業務手順を固定する</h3>
+<p>CLAUDE.md は、プロジェクトごとの前提や守ってほしいルール、業務手順を記述しておくためのファイルです。Anthropic の公式ドキュメントでも、こうした設定によって AI の振る舞いを方向づける仕組みが案内されています（ <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">https://code.claude.com/docs/en/overview</a> ／仕様は2026年6月時点）。ここに「触ってよい範囲」「やってはいけないこと」を書いておけば、現場が守れるルールとして運用を安定させられます。</p>
+<h3>Gitと「実行前に計画を出させる」確認工程</h3>
+<p>変更を記録する Git を併用すれば、もし意図しない結果になっても元の状態に戻せます。また、実行の前に「何をするつもりか」を計画として提示させ、人が確認してから進める運用にすると、誤操作のリスクを大きく下げられます。</p>
+<h3>機密情報のマスキングと権限管理</h3>
+<p>顧客データなどの機密情報は、そのまま渡さず、必要に応じて伏せる（マスキングする）運用が安全です。あわせて、AI が触れられるフォルダや操作の範囲を絞る権限管理も重要です。何を保護すべきかをあらかじめ決めておくことが、安心して使うための前提になります。</p>
+<h3>インストール・初期設定の流れ（概要）</h3>
+<p>導入そのものは、必要な環境を用意し、アカウントと連携して使い始める流れになります。詳細な手順や前提環境は更新されることがあるため、公式ドキュメントで最新の情報を確認してください。料金や動作環境などの条件は、断定せず公式の案内を基準にするのが安全です [要確認]。</p>
+<h2 id="section-5">「導入したのに使われない」を防ぐ｜小さく始めて定着させる伴走の型</h2>
+<p>設定を整えても、ツールが現場で使われなければ意味がありません。ここでは、Claude Code の業務活用を「入れて終わり」にしないために、業務の棚卸しから対象選定、小さな開始、確認工程を残す運用までの定着の型を、弊社の支援実績にもとづいてお伝えします。</p>
+<h3>なぜ「使われない」が起きるのか（よくある失敗パターン）</h3>
+<p>よくある失敗は、最初から多くの業務をまとめて自動化しようとして、設定が複雑になり現場が離れてしまうパターンです。もうひとつは、確認工程を省いて完全自動を目指した結果、想定外の出力への不安から使われなくなるパターンです。AI 導入の費用対効果の考え方は別記事（ <a href="https://notemo.net/blog/2026-05-23-chusho-ai-hiyou-roi.html">https://notemo.net/blog/2026-05-23-chusho-ai-hiyou-roi.html</a> ）でも整理しています。</p>
+<h3>自動化する業務を選ぶ3つの基準</h3>
+<p>弊社が支援現場で用いている基準は、(1) くり返しの頻度が高いこと、(2) 手順が決まっていること、(3) 失敗してもすぐ気づけて戻せること、の 3 点です。この条件にあう業務から小さく始めると、成功体験が得やすく定着につながります。DX が失敗する典型的な理由と回避策は、こちらの記事（ <a href="https://notemo.net/blog/2026-05-23-chusho-dx-shippai.html">https://notemo.net/blog/2026-05-23-chusho-dx-shippai.html</a> ）も参考になります。</p>
+<h3>半自動運用と工数削減の正しい測り方（確認工程込み）</h3>
+<p>業務効率化の効果（工数削減）を測るときは、確認工程の時間も必ず含めて計算することが大切です。生成にかかる時間がゼロに近くても、人の確認に時間がかかれば全体の削減効果は変わります。断定的な数値を掲げるより、確認工程込みで「どのくらい楽になったか」を範囲で捉えるほうが、現場の実感に近く、無理のない運用につながります。</p>
+<h2 id="section-6">よくある質問（FAQ）</h2>
+<p>最後に、導入を検討している非エンジニアの現場から実際によく寄せられる疑問を整理します。料金や安全性など、判断材料になりやすい点を中心にまとめました。</p>
+<h3>Q1. プログラミングの知識が全くなくても本当に使えますか？</h3>
+<p>はい、日本語で「何をしてほしいか」を伝えられれば使えます。コードを書く代わりに、目的と守ってほしい条件を言葉で明確にすることが中心になります。まずは定型業務から小さく試すのがおすすめです。</p>
+<h3>Q2. 料金はどのくらいかかりますか？</h3>
+<p>料金はプランによって異なります。Anthropic の公式情報では、Claude Code は Pro 以上のプランに含まれるとされています（出典: Anthropic「Claude 料金プラン」 <a href="https://claude.com/pricing" target="_blank" rel="noopener">https://claude.com/pricing</a> ）。具体的な金額やプラン構成は変わることがあるため、最新の内容は公式の料金ページでご確認ください [要確認]。</p>
+<h3>Q3. 機密情報や顧客データを扱っても大丈夫ですか？</h3>
+<p>扱えますが、マスキングや権限管理などの運用ルールを整えることが前提です。何を保護すべきかを決め、必要な情報だけを渡す設計にすれば、安心して使えます。</p>
+<h3>Q4. ChatGPTを使っていればClaude Codeは不要ですか？</h3>
+<p>役割が異なるため、不要にはなりません。会話で考える作業はチャット型 AI、ファイルを動かす作業は Claude Code、と使い分けると効果的です。</p>
+<h3>Q5. どの業務から始めるのが失敗しにくいですか？</h3>
+<p>くり返しが多く、手順が決まっていて、失敗してもすぐ戻せる業務が最適です。受注 CSV の整形や週次レポートの下書きなどから始めると、成功体験を得やすくなります。</p>
+<p>Claude Code を使った定型業務の自動化は、業務の棚卸しから設定・定着まで一連で取り組むことで効果が安定します。弊社では、Claude Code の業務活用について「非エンジニアの自社でも使えるのか」を見極める無料相談を承っています。まずはお気軽にお問い合わせください。</p>
+
+
+        </article>
+
+        <!-- サイドバー -->
+        <aside class="article-sidebar">
+          <div class="sidebar-card toc">
+            <h3>目次</h3>
+            <ol>
+              <li><a href="#section-1">Claude Codeとは何か｜チャット型AI（ChatGPT等）との決定的な違い</a></li>
+              <li><a href="#section-2">非エンジニアがClaude Codeで自動化できる業務｜中小・小売/EC現場の具体ユースケース</a></li>
+              <li><a href="#section-3">【自社事例】上場IT企業のセキュリティチェック業務をClaude Codeで自動化した話</a></li>
+              <li><a href="#section-4">非エンジニアでも安全に使うための設定と運用ルール</a></li>
+              <li><a href="#section-5">「導入したのに使われない」を防ぐ｜小さく始めて定着させる伴走の型</a></li>
+              <li><a href="#section-6">よくある質問（FAQ）</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-card">
+            <h3>お問い合わせ</h3>
+            <p style="font-size:13px; color:var(--color-sub); margin-bottom:var(--space-sm);">EC・DX・AIについてお気軽にご相談ください。</p>
+            <a href="../contact.html" class="btn btn--primary" style="width:100%; justify-content:center;">無料相談する</a>
+          </div>
+        </aside>
+
+      </div><!-- /.article-layout -->
+
+    </div><!-- /.container -->
+
+    <!-- CTAバナー -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__text">
+            <h2>まずはご相談ください</h2>
+            <p>課題を整理するだけでも構いません。お気軽にお問い合わせください。</p>
+          </div>
+          <a href="../contact.html" class="btn btn--white btn--lg">無料相談を申し込む</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="logo-text">株式会社ノテモ</div>
+          <p>EC支援・業務DX・AI活用の3領域で<br>中小企業の成長を伴走型でサポートします。</p>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <p>お気軽にお問い合わせください。</p>
+          <a href="../contact.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8);">お問い合わせはこちら</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="year"></span> 株式会社ノテモ All Rights Reserved.</p>
+        <div class="footer__bottom-links"><a href="../privacy.html">プライバシーポリシー</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
