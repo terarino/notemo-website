@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO ※記事ごとに編集 -->
+  <title>OWASP LLM Top 10で稟議を通す説明資料の作り方｜ノテモブログ</title>
+  <meta name="description" content="OWASP LLM Top 10を稟議の説明資料に落とし込む手順を解説します。10項目を「技術で解く/運用ルールで解く/当面は受容する」に仕分ける表、差し戻されやすい「対応済み」の書き方、2025年版と旧版の混在リスク、OWASP公式チェックリストの添付活用までを整理します。">
+  <link rel="canonical" href="https://notemo.net/blog/2026-08-04-owasp-llm-top10.html">
+
+  <!-- OGP ※記事ごとに編集 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://notemo.net/blog/2026-08-04-owasp-llm-top10.html">
+  <meta property="og:title"       content="OWASP LLM Top 10で稟議を通す説明資料の作り方｜ノテモブログ">
+  <meta property="og:description" content="OWASP LLM Top 10を稟議の説明資料に落とし込む手順を解説します。10項目を「技術で解く/運用ルールで解く/当面は受容する」に仕分ける表、差し戻されやすい「対応済み」の書き方、2025年版と旧版の混在リスク、OWASP公式チェックリストの添付活用までを整理します。">
+  <meta property="og:image"       content="https://notemo.net/images/ogp/2026-08-04-owasp-llm-top10.webp">
+  <meta property="og:site_name"   content="株式会社ノテモ">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+
+  <!-- 構造化データ: Article ※記事ごとに編集 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OWASP LLM Top 10で稟議を通す説明資料の作り方",
+    "datePublished": "2026-08-04",
+    "dateModified": "2026-08-04",
+    "author": { "@type": "Organization", "name": "株式会社ノテモ" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "logo": { "@type": "ImageObject", "url": "https://notemo.net/images/logo.webp" }
+    }
+  }
+  </script>
+  <!-- 構造化データ: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",       "item": "https://notemo.net/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ",       "item": "https://notemo.net/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "OWASP LLM Top 10で稟議を通す説明資料の作り方" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="../index.html" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+          <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
+          <div class="header__logo-sub">株式会社ノテモ</div>
+        </a>
+        <nav class="header__nav" aria-label="グローバルナビゲーション">
+          <ul class="header__nav-list">
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+          </ul>
+          <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
+        </nav>
+        <button class="header__hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__sp-menu" role="navigation">
+    <ul>
+      <li><a href="../services.html">サービス</a></li>
+      <li><a href="../cases.html">事例・実績</a></li>
+      <li><a href="../blog/index.html">ブログ</a></li>
+      <li><a href="../company.html">会社概要</a></li>
+      <li><a href="../contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol>
+          <li><a href="../">ホーム</a></li>
+          <li><a href="../blog/index.html">ブログ</a></li>
+          <li>OWASP LLM Top 10で稟議を通す説明資料の作り方</li>
+        </ol>
+      </nav>
+
+      <!-- 記事ヘッダー -->
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="tag">AI活用</span>
+          <time datetime="2026-08-04">2026年08月04日</time>
+        </div>
+        <h1>OWASP LLM Top 10で稟議を通す説明資料の作り方</h1>
+      </header>
+
+      <!-- 記事レイアウト -->
+      <div class="article-layout">
+
+        <!-- 本文 -->
+        <article class="article-body">
+
+<h3>この記事の要点</h3>
+<p>OWASP LLM Top 10は、生成AIの危険を「事業に何が起き、どこまで対処し、何を承認してほしいか」という経営判断の言葉へ変える共通言語です。本記事では、中小企業の発注側が2025年版を稟議へ落とし込む方法を整理します。</p>
+<p><strong>ポイント</strong></p>
+<ul>
+<li>参照版と確認時点を明記し、旧版の項目名を混在させない</li>
+<li>10項目を技術・運用・受容で仕分け、担当を明確にする</li>
+<li>稟議には対象、対応状況、残存リスク、判断事項を書く</li>
+<li>「全項目に対応済み」ではなく、根拠と未対応範囲を示す</li>
+<li>OWASPとIPAの公式資料は、用途と版を見て添付する</li>
+</ul>
+<hr />
+<p>生成AIアプリを導入したいものの、セキュリティの説明が専門用語に偏り、稟議で何を示せばよいか分からない。委託先の「対策しています」という回答が十分か判断できない。発注側に多い悩みです。</p>
+<p>OWASP LLM Top 10は、LLM（大規模言語モデル）アプリの代表的リスクを点検する基準です。本記事を読むと、2025年版を自社の用途に照らして仕分け、委託先への質問と稟議項目へ変える手順が分かります。参照内容は2026年7月に確認しました。</p>
+<h2 id="section-1">稟議でOWASP LLM Top 10を使う理由 — 技術リスクを経営層の問いに翻訳する</h2>
+<p>経営層が知りたいのは生成AI 脆弱性の名称ではなく、事業への影響と会社としての選択です。そこでOWASP LLM Top 10を、LLM セキュリティの専門用語を経営判断の問いへ翻訳する共通の点検軸として使います。</p>
+<p>筆者が社内の生成AI導入推進に携わる中で見てきた限りでは、会議の場で担当者がリスクを詳しく列挙するほど、審議が止まる傾向がありました。参加者から「結局、情報は漏れるのか」「止めるべきなのか」と問い返され、説明が技術論へ戻ってしまうためです。対策名を増やすより、判断に必要な情報へ変換した方が話は進みます。</p>
+<p>OWASP公式は、2025年版をLLMおよび生成AIアプリの開発、導入、管理のライフサイクルにまたがるリスク、脆弱性、緩和策として示しています（出典: OWASP Gen AI Security Project「2025 Top 10 Risk &amp; Mitigations for LLMs and Gen AI Apps」 <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">https://genai.owasp.org/llm-top-10/</a> ）。発注側は各項目を、筆者が考える次の四つの問いに置き換えると扱いやすくなります。</p>
+<ul>
+<li>何が起きると、顧客・業務・信用にどのような影響が出るか</li>
+<li>発生を抑える措置と、発生後に検知・復旧する措置は何か</li>
+<li>自社と委託先のどちらが実施し、証跡を誰が確認するか</li>
+<li>今は残る危険を誰が、どの条件で受け入れるか</li>
+</ul>
+<p>この枠組みは承認を保証しません。公式ページは技術的リスクと緩和策が中心で、経営判断用の稟議様式ではない、というのが筆者の見解です。公式が明示した性格ではないため、事業影響、費用、責任者、撤退条件は自社で補います。</p>
+<h2 id="section-2">参照する版を先に固定する — 2025年版で入れ替わった項目と旧版のまま出すリスク</h2>
+<p>共通言語として使うには、仕分けの前に版を固定しなければなりません。2025年版で変わった名称を確認し、旧版と混ぜたときに起きる説明のずれを防ぎます。資料には版だけでなく確認時点も残しましょう。</p>
+<p>筆者はまず、OWASP公式ページ上部の「2025 Top 10」という表記と、各項目に付く「LLM01:2025」から「LLM10:2025」までの識別子を確認します。そのうえで、同じページに旧版への導線が別に置かれていることを見て、参照対象を判断しました。この記事および稟議例の基準は2025年版、確認時点は2026年7月です（出典: OWASP Gen AI Security Project「2025 Top 10 Risk &amp; Mitigations for LLMs and Gen AI Apps」 <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">https://genai.owasp.org/llm-top-10/</a> ）。</p>
+<p>旧版で見かける「Model Denial of Service」「Insecure Plugin Design」「Overreliance」「Model Theft」を現在の10項目として並べるのは避けます。2025年版では「Unbounded Consumption」「Excessive Agency」「Misinformation」「System Prompt Leakage」などに整理されており、単純な言い換えではありません。</p>
+<p>版が混在すると、委託先は現行項目で回答し、発注側は旧項目でチェックする事態になりかねません。似た言葉でも対象範囲が違えば、「対応済み」の意味が一致せず、審議の場で表の作り直しや根拠の再提出を求められる可能性があります。</p>
+<p>稟議の脚注には「参照基準: OWASP Top 10 for LLM Applications 2025、確認日: 2026年7月、対象: 本稟議記載のLLMアプリ」と記します。OWASP Top 10 LLMという呼び方だけで済ませず、版と対象を一組にし、主要機能や基準が変わった時の再確認条件も添えてください。</p>
+<h2 id="section-3">10項目を「技術で解く/運用ルールで解く/当面は受容する」に仕分ける一覧表</h2>
+<p>版を固定したら、OWASP LLM Top 10を実施方法へ結び付けます。「技術」は設計・設定、「運用」は人の確認、「受容」は理由と期限を明記して残す、という定義です。</p>
+<p>これはOWASP公式の分類ではなく、筆者独自の整理です。用途によって主列は変わるため、自社の責任分界を決める起点として使ってください。名称と順序は公式の2025年版に合わせています（出典: OWASP Gen AI Security Project「2025 Top 10 Risk &amp; Mitigations for LLMs and Gen AI Apps」 <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">https://genai.owasp.org/llm-top-10/</a> ）。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>2025年版の項目</th>
+  <th>主な置き場</th>
+  <th>自社への該当を見極める質問</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>LLM01 Prompt Injection</td>
+  <td>技術＋運用</td>
+  <td>外部入力が指示や権限を変えないか</td>
+</tr>
+<tr>
+  <td>LLM02 Sensitive Information Disclosure</td>
+  <td>技術＋運用</td>
+  <td>入出力やログに秘密が残らないか</td>
+</tr>
+<tr>
+  <td>LLM03 Supply Chain</td>
+  <td>技術＋運用</td>
+  <td>提供元と更新履歴を確認できるか</td>
+</tr>
+<tr>
+  <td>LLM04 Data and Model Poisoning</td>
+  <td>技術＋運用</td>
+  <td>データ変更を承認、追跡できるか</td>
+</tr>
+<tr>
+  <td>LLM05 Improper Output Handling</td>
+  <td>技術</td>
+  <td>出力を利用前に検証しているか</td>
+</tr>
+<tr>
+  <td>LLM06 Excessive Agency</td>
+  <td>技術＋運用</td>
+  <td>権限を絞り、重要操作を承認するか</td>
+</tr>
+<tr>
+  <td>LLM07 System Prompt Leakage</td>
+  <td>技術＋受容</td>
+  <td>指示が漏れても秘密や認可を守れるか</td>
+</tr>
+<tr>
+  <td>LLM08 Vector and Embedding Weaknesses</td>
+  <td>技術</td>
+  <td>RAG検索を権限で分離できるか</td>
+</tr>
+<tr>
+  <td>LLM09 Misinformation</td>
+  <td>運用＋受容</td>
+  <td>事実確認者と利用禁止用途があるか</td>
+</tr>
+<tr>
+  <td>LLM10 Unbounded Consumption</td>
+  <td>技術＋受容</td>
+  <td>費用・処理量の上限と停止条件があるか</td>
+</tr>
+</tbody>
+</table></div>
+<p>中小企業では、まずLLM01、02、05、06、09を厚く確認するとよいでしょう。これは統計ではなく、入力、権限、出力が日常利用に近いことから置く筆者の優先順位です。</p>
+<p>委託先には「対策していますか」ではなく、証跡を求めます。AI セキュリティ チェックリストには確認者、証跡、未対応理由、再確認日を持たせます。技術解説は別資料に分け、表ではLLMアプリ セキュリティ対策の責任と判断に絞ります。なお、表で「運用」に寄せた項目は、最終的に社内の利用ルールへ落とし込むことになります（参考: <a href="https://notemo.net/blog/2026-05-22-seiseiai-risk-guideline.html">生成AIリスクと社内ガイドラインの必須要素</a>）。</p>
+<h2 id="section-4">仕分け結果を稟議資料の5項目に落とし込む</h2>
+<p>仕分け表の次は、経営層が読める稟議本文へ圧縮します。筆者は、対象範囲、該当リスク、対応状況、残存リスク、判断を仰ぐ点の五項目で組み立てることを勧めます。</p>
+<p>第一の「対象範囲」には、利用者、入力データ、接続先、AIが実行できる操作を書きます。第二の「該当リスク」ではOWASP LLM Top 10から当てはまる項目だけを選び、選外とした理由も別紙に残します。第三の「対応状況」は、対応済み・未対応・受容に分け、担当、期限、確認証跡を添えます。</p>
+<p>第四の「残存リスク」には、対策後も起こり得る事象と、その際の検知・停止・連絡方法を記載。第五の「判断を仰ぐ点」では、費用上限、利用開始の条件、受容する危険、撤退または一時停止の基準を明確にします。選択肢と推奨案を示すと、経営層は技術の正否ではなく会社として許容するかを判断できます。</p>
+<p>筆者が実務で見てきた傾向では、「対応済み」と「今後対応」を一段落にまとめた資料は、どこまで終わったのかを会議で問い返されがちでした。残存リスクが書かれていないと、承認後にも追加質問が続き、開始条件が曖昧になります。表の状態区分を本文でも崩さない方が安全です。</p>
+<p>なお、LLM セキュリティの10項目は、費用対効果、個人情報の適法な取扱い、労務、契約、事業継続、利用者教育の全てを網羅するものではありません。法務・契約上の判断や通常の情報セキュリティ統制は別の欄で扱います。守備範囲外を隠さず、どの社内ルールで補うかを示すことが、資料の信頼性につながります。承認後に誰が運用を回すかまで示す場合は、<a href="https://notemo.net/blog/2026-06-26-ai-governance-taisei.html">中小企業のAIガバナンス体制構築の進め方</a>で扱う体制づくりの論点も併せて確認してください。</p>
+<h2 id="section-5">稟議が差し戻される「OWASP対応済み」の書き方3パターン</h2>
+<p>稟議が止まる原因は、対策不足だけではなく説明の粒度にもあります。OWASP LLM Top 10を用いた記述で保留されやすい三つの型と、判断しやすい書き換え方を整理します。</p>
+<p>以下は筆者が見聞きした傾向で、承認を保証するものではありません。ある会議では「主要リスクは対策済み」の根拠が委託先の口頭説明しかなく、審議が保留になりました。別の場面では、全て「なし」としたため評価方法への質問が集中しました。</p>
+<h3>パターン1：「全項目に対応済み」と言い切る</h3>
+<p>10項目は性質が異なり、誤情報やシステムプロンプト漏えいのように、対策後も危険が残るものがあります。「対応済み」だけでは、実装したのか、運用で抑えるのか、受容したのかが読めません。</p>
+<p>「対象となる項目を評価し、技術対応、運用対応、期限付き受容に分類した。未対応は本番開始条件として管理する」と書き換え、別紙の行番号へつなぎます。完了を装うより、残る危険を誰が判断したかが伝わります。</p>
+<h3>パターン2：「委託先がOWASP準拠」とだけ書く</h3>
+<p>委託先の説明だけでは、対象の版、製品範囲、検証方法が不明です。しかもTop 10は認証制度ではないため、「準拠」の一語から保証範囲を読み取れません。</p>
+<p>「委託先から2025年版の各該当項目について、実装箇所、試験結果、責任分界の説明を受領し、自社担当者が確認した」と事実に分解します。未受領の証跡は、取得予定日と利用開始への影響を記載してください。</p>
+<h3>パターン3：「リスクは低い」で終える</h3>
+<p>低いという結論だけでは、発生可能性と影響度のどちらか不明です。低頻度でも影響が大きければ、経営判断が要ります。</p>
+<p>「利用者を限定し、外部操作の権限を与えない。一方、誤回答は残るため、対外文書への転用は禁止し、確認担当を置く」のように、条件、残る事象、運用を一続きで書きます。KPIは異常利用の確認、教育、未解決事項の期限順守など、証跡を取れる指標に絞ります。</p>
+<h2 id="section-6">OWASP公式のガバナンスチェックリストを稟議の添付資料に使う</h2>
+<p>本文の説明を支える添付資料には、技術確認と社内教育で役割の異なる公式資料を選びます。AI セキュリティ チェックリストをそのまま付けるのではなく、版と対象読者を明記して自社の評価表へ対応付けます。</p>
+<p>筆者なら、部門横断の別紙としてOWASP公式の「LLM Applications Cybersecurity and Governance Checklist」を使います。同資料はv1.1の英語版で、2024年5月7日付です（出典: OWASP Gen AI Security Project「LLM Applications Cybersecurity and Governance Checklist v1.1 – English」 <a href="https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/" target="_blank" rel="noopener">https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/</a> ）。</p>
+<p>ただし、これはOWASP LLM Top 10の2025年版より前に公開され、10項目と一対一に対応せず、英語版のみです。自社用の日本語要約には「公式訳ではない」と注記し、2025年版のどの行を補うか示します。</p>
+<p>教育にはIPAの「AI利用者のためのセキュリティ豆知識」が使えます。非専門の利用者・マネージャ向けのスライドで、秘密情報の入力やRAG利用時の注意などを扱います（出典: IPA 独立行政法人情報処理推進機構「AI利用者のためのセキュリティ豆知識」 <a href="https://www.ipa.go.jp/digital/ai/security/ai_security_tips.html" target="_blank" rel="noopener">https://www.ipa.go.jp/digital/ai/security/ai_security_tips.html</a> ）。</p>
+<p>稟議ではOWASP資料を評価、IPA資料を教育の根拠として分けます。委託先の回答は「質問」「回答」「証跡」「自社判断」の四欄に転記し、資料の制約も記します。</p>
+<h2 id="section-7">よくある質問</h2>
+<p>OWASP LLM Top 10を実際の資料へ移すと、対象範囲や表現、見直し時期で迷いが生じます。本文の手順だけでは決めにくい、稟議固有の疑問に筆者の見解で答えます。</p>
+<h3>Q1. SaaS・ノーコード利用でも稟議に書く必要がありますか</h3>
+<p>書くべきだと筆者は考えます。自社開発でなくても、入力情報、ログ、権限、外部連携、出力用途は自社の選択です。委託先の対策と、自社の設定・教育・確認を分けて責任の空白を探します。</p>
+<h3>Q2. 「OWASP準拠」と書いてよいですか</h3>
+<p>単独では使わない方が適切です。これは代表的リスクと緩和策を示す文書で、認証制度ではありません。「2025年版を参照し、別紙の対策と残存リスクを確認した」と実施事実を書きます。</p>
+<h3>Q3. 他社の生成AI 脆弱性対策を聞かれたらどう答えますか</h3>
+<p>裏付けのない他社動向は推測で答えません。自社の用途、情報、外部接続、事故時の影響から判断したと説明します。比較するなら、同じ軸で確認できる公開情報に出典と確認日を添えます。</p>
+<h3>Q4. 承認後はいつ見直しますか</h3>
+<p>変更起点の見直しが実務的です。モデル、委託先、データ接続、AIの権限、参照基準の変更や異常検知を再評価条件とし、責任者も決めます。</p>
+<p>OWASP LLM Top 10は、自社のLLM活用に抜けがないかを第三者の基準で洗い出す点検軸として有効です。ただし、全項目を埋めれば安全になるわけではなく、用途固有の危険と残存リスクは残ります。まず自社に該当する項目を絞り、対応済み・未対応・受容に仕分け、委託先が証跡を示せる質問へ落とし込むところから始めることをおすすめします。</p>
+
+
+        </article>
+
+        <!-- サイドバー -->
+        <aside class="article-sidebar">
+          <div class="sidebar-card toc">
+            <h3>目次</h3>
+            <ol>
+              <li><a href="#section-1">稟議でOWASP LLM Top 10を使う理由 — 技術リスクを経営層の問いに翻訳する</a></li>
+              <li><a href="#section-2">参照する版を先に固定する — 2025年版で入れ替わった項目と旧版のまま出すリスク</a></li>
+              <li><a href="#section-3">10項目を「技術で解く/運用ルールで解く/当面は受容する」に仕分ける一覧表</a></li>
+              <li><a href="#section-4">仕分け結果を稟議資料の5項目に落とし込む</a></li>
+              <li><a href="#section-5">稟議が差し戻される「OWASP対応済み」の書き方3パターン</a></li>
+              <li><a href="#section-6">OWASP公式のガバナンスチェックリストを稟議の添付資料に使う</a></li>
+              <li><a href="#section-7">よくある質問</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-card">
+            <h3>お問い合わせ</h3>
+            <p style="font-size:13px; color:var(--color-sub); margin-bottom:var(--space-sm);">EC・DX・AIについてお気軽にご相談ください。</p>
+            <a href="../contact.html" class="btn btn--primary" style="width:100%; justify-content:center;">無料相談する</a>
+          </div>
+        </aside>
+
+      </div><!-- /.article-layout -->
+
+    </div><!-- /.container -->
+
+    <!-- CTAバナー -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__text">
+            <h2>まずはご相談ください</h2>
+            <p>課題を整理するだけでも構いません。お気軽にお問い合わせください。</p>
+          </div>
+          <a href="../contact.html" class="btn btn--white btn--lg">無料相談を申し込む</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="logo-text">株式会社ノテモ</div>
+          <p>EC支援・業務DX・AI活用の3領域で<br>中小企業の成長を伴走型でサポートします。</p>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <p>お気軽にお問い合わせください。</p>
+          <a href="../contact.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8);">お問い合わせはこちら</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="year"></span> 株式会社ノテモ All Rights Reserved.</p>
+        <div class="footer__bottom-links"><a href="../privacy.html">プライバシーポリシー</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
