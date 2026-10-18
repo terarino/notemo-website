@@ -1,23 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MVM958CR');</script>
+  <!-- End Google Tag Manager -->
 
   <!-- SEO ※記事ごとに編集 -->
-  <title>Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモブログ</title>
+  <title>Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモ</title>
   <meta name="description" content="Claude Codeの業務活用を非エンジニア向けにやさしく解説します。ChatGPTとの違い、小売/EC現場の自動化ユースケース、上場IT企業の自社事例、安全運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた、今日から始められる実践ガイドです。">
   <link rel="canonical" href="https://notemo.net/blog/2026-06-02-claude-code-gyomu-katsuyo.html">
 
   <!-- OGP ※記事ごとに編集 -->
   <meta property="og:type"        content="article">
   <meta property="og:url"         content="https://notemo.net/blog/2026-06-02-claude-code-gyomu-katsuyo.html">
-  <meta property="og:title"       content="Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモブログ">
+  <meta property="og:title"       content="Claude Codeの業務活用とは？非エンジニアの自動化入門｜ノテモ">
   <meta property="og:description" content="Claude Codeの業務活用を非エンジニア向けにやさしく解説します。ChatGPTとの違い、小売/EC現場の自動化ユースケース、上場IT企業の自社事例、安全運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた、今日から始められる実践ガイドです。">
   <meta property="og:image"       content="https://notemo.net/images/ogp/2026-06-02-claude-code-gyomu-katsuyo.webp">
   <meta property="og:site_name"   content="株式会社ノテモ">
   <meta name="twitter:card"       content="summary_large_image">
-
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,13 +43,29 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Claude Codeの業務活用とは？非エンジニアの自動化入門",
+    "description": "Claude Codeの業務活用を非エンジニア向けにやさしく解説します。ChatGPTとの違い、小売/EC現場の自動化ユースケース、上場IT企業の自社事例、安全運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた、今日から始められる実践ガイドです。",
+    "image": [
+      "https://notemo.net/images/ogp/2026-06-02-claude-code-gyomu-katsuyo.webp"
+    ],
     "datePublished": "2026-06-02",
     "dateModified": "2026-06-02",
-    "author": { "@type": "Organization", "name": "株式会社ノテモ" },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://notemo.net/blog/2026-06-02-claude-code-gyomu-katsuyo.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "url": "https://notemo.net/"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "株式会社ノテモ",
-      "logo": { "@type": "ImageObject", "url": "https://notemo.net/images/logo.webp" }
+      "url": "https://notemo.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://notemo.net/images/logo.webp"
+      }
     }
   }
   </script>
@@ -58,12 +83,16 @@
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVM958CR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- ヘッダー -->
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="../index.html" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+        <a href="../" class="header__logo" aria-label="株式会社ノテモ トップページへ">
           <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
           <div class="header__logo-sub">株式会社ノテモ</div>
         </a>
@@ -71,7 +100,7 @@
           <ul class="header__nav-list">
             <li><a href="../services.html">サービス</a></li>
             <li><a href="../cases.html">事例・実績</a></li>
-            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="./">ブログ</a></li>
             <li><a href="../company.html">会社概要</a></li>
           </ul>
           <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
@@ -82,11 +111,11 @@
       </div>
     </div>
   </header>
-  <div class="header__sp-menu" role="navigation">
+  <div class="header__sp-menu" role="navigation" aria-label="スマートフォンメニュー">
     <ul>
       <li><a href="../services.html">サービス</a></li>
       <li><a href="../cases.html">事例・実績</a></li>
-      <li><a href="../blog/index.html">ブログ</a></li>
+      <li><a href="./">ブログ</a></li>
       <li><a href="../company.html">会社概要</a></li>
       <li><a href="../contact.html">お問い合わせ</a></li>
     </ul>
@@ -99,7 +128,7 @@
       <nav class="breadcrumb" aria-label="パンくずリスト">
         <ol>
           <li><a href="../">ホーム</a></li>
-          <li><a href="../blog/index.html">ブログ</a></li>
+          <li><a href="./">ブログ</a></li>
           <li>Claude Codeの業務活用とは？非エンジニアの自動化入門</li>
         </ol>
       </nav>
@@ -107,10 +136,11 @@
       <!-- 記事ヘッダー -->
       <header class="article-header">
         <div class="article-meta">
-          <span class="tag">AI活用</span>
+          <a href="./#AI%E6%B4%BB%E7%94%A8" class="tag">AI活用</a>
           <time datetime="2026-06-02">2026年06月02日</time>
         </div>
         <h1>Claude Codeの業務活用とは？非エンジニアの自動化入門</h1>
+        <figure class="article-eyecatch"><img src="../images/ogp/2026-06-02-claude-code-gyomu-katsuyo.webp" alt="Claude Codeの業務活用とは？非エンジニアの自動化入門" width="1200" height="630" fetchpriority="high"></figure>
       </header>
 
       <!-- 記事レイアウト -->
@@ -119,7 +149,7 @@
         <!-- 本文 -->
         <article class="article-body">
 
-<h3>この記事の要点</h3>
+<p class="article-summary__title">この記事の要点</p>
 <p>Claude Code の業務活用を、ChatGPT などのチャット型 AI は触ったことがある非エンジニア向けにやさしく整理します。チャット型 AI との違いから、小売・EC 現場の具体的な自動化、弊社が支援した上場 IT 企業の事例、安全な運用と「使われない」を防ぐ定着の型まで、中小企業の現場目線でまとめた実践的な入門ガイドです。</p>
 <p><strong>ポイント</strong></p>
 <ul>
@@ -216,6 +246,55 @@
 
       </div><!-- /.article-layout -->
 
+      <!-- RELATED-START -->
+      <section class="article-related" aria-labelledby="related-title">
+        <div class="article-service-cta">
+          <p class="article-service-cta__label">この記事のテーマに関するご支援</p>
+          <p>生成AIの社内ルールづくりから、Claude Code などの業務活用まで伴走します。</p>
+          <a href="../services.html#ai" class="btn btn--outline">AI活用支援の内容を見る</a>
+        </div>
+        <h2 id="related-title" class="article-related__title">関連記事</h2>
+        <div class="grid-3 blog-grid">
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-06-26-ai-governance-taisei.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-06-26">2026.06.26</time>
+                <a href="./#AI%E6%B4%BB%E7%94%A8" class="tag blog-card-v2__tag">AI活用</a>
+              </div>
+              <h3><a href="2026-06-26-ai-governance-taisei.html" class="blog-card-v2__title-link">専任部署なしの中小企業がAIガバナンス体制構築を90日で進める手順</a></h3>
+              <p class="blog-card-v2__excerpt">AIガバナンスの体制構築は、専任部署や倫理委員会を持つ大企業だけの話ではありません。本記事は、情シスや総務を兼務しながらAI導入も任されている中小企業の担当者に向けて、専任部署な…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-05-23-chusho-ai-hiyou-roi.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-05-23">2026.05.23</time>
+                <a href="./#AI%E6%B4%BB%E7%94%A8" class="tag blog-card-v2__tag">AI活用</a>
+              </div>
+              <h3><a href="2026-05-23-chusho-ai-hiyou-roi.html" class="blog-card-v2__title-link">中小企業のAI導入費用とROI｜部門別の相場と投資回収シミュレーション【2026年版】</a></h3>
+              <p class="blog-card-v2__excerpt">中小企業 ai 導入 費用 roiの相場感は、生成AIの普及で大きく変わりました。月額数万円から始められるツールが増え、初期投資のハードルは下がっている一方、効果測定の設計を誤る…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-06-02-ec-crm-merumaga-ltv.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-06-02">2026.06.02</time>
+                <a href="./#EC" class="tag blog-card-v2__tag">EC</a>
+              </div>
+              <h3><a href="2026-06-02-ec-crm-merumaga-ltv.html" class="blog-card-v2__title-link">ECのCRM・メルマガでLTVを上げる方法｜中小EC向け</a></h3>
+              <p class="blog-card-v2__excerpt">EC の CRM・メルマガで LTV を上げるには、高機能ツールを入れる前に「まず手で回せる設計」を固めることが近道です。本記事では、LTV の考え方と現状把握から、購入直後 →…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- RELATED-END -->
+
     </div><!-- /.container -->
 
     <!-- CTAバナー -->
@@ -246,7 +325,7 @@
           <ul>
             <li><a href="../services.html">サービス</a></li>
             <li><a href="../cases.html">事例・実績</a></li>
-            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="./">ブログ</a></li>
             <li><a href="../company.html">会社概要</a></li>
             <li><a href="../contact.html">お問い合わせ</a></li>
           </ul>

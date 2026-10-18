@@ -1,23 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MVM958CR');</script>
+  <!-- End Google Tag Manager -->
 
   <!-- SEO ※記事ごとに編集 -->
-  <title>カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術｜ノテモブログ</title>
+  <title>カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術｜ノテモ</title>
   <meta name="description" content="ECチャットボット導入でカゴ落ちを防ぐ方法を解説。決済不安・送料や追加費用・サイズ不安・登録の手間という離脱要因ごとに、発話トリガー・分岐・CTAまで会話シナリオを設計する手順を紹介します。ルールベース型と生成AI型の選び方、少人数ECでの有人連携やKPI設定の始め方も実務目線で解説します。">
   <link rel="canonical" href="https://notemo.net/blog/2026-07-02-ec-chatbot-donyu.html">
 
   <!-- OGP ※記事ごとに編集 -->
   <meta property="og:type"        content="article">
   <meta property="og:url"         content="https://notemo.net/blog/2026-07-02-ec-chatbot-donyu.html">
-  <meta property="og:title"       content="カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術｜ノテモブログ">
+  <meta property="og:title"       content="カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術｜ノテモ">
   <meta property="og:description" content="ECチャットボット導入でカゴ落ちを防ぐ方法を解説。決済不安・送料や追加費用・サイズ不安・登録の手間という離脱要因ごとに、発話トリガー・分岐・CTAまで会話シナリオを設計する手順を紹介します。ルールベース型と生成AI型の選び方、少人数ECでの有人連携やKPI設定の始め方も実務目線で解説します。">
   <meta property="og:image"       content="https://notemo.net/images/ogp/2026-07-02-ec-chatbot-donyu.webp">
   <meta property="og:site_name"   content="株式会社ノテモ">
   <meta name="twitter:card"       content="summary_large_image">
-
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,13 +43,29 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術",
+    "description": "ECチャットボット導入でカゴ落ちを防ぐ方法を解説。決済不安・送料や追加費用・サイズ不安・登録の手間という離脱要因ごとに、発話トリガー・分岐・CTAまで会話シナリオを設計する手順を紹介します。ルールベース型と生成AI型の選び方、少人数ECでの有人連携やKPI設定の始め方も実務目線で解説します。",
+    "image": [
+      "https://notemo.net/images/ogp/2026-07-02-ec-chatbot-donyu.webp"
+    ],
     "datePublished": "2026-07-02",
     "dateModified": "2026-07-02",
-    "author": { "@type": "Organization", "name": "株式会社ノテモ" },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://notemo.net/blog/2026-07-02-ec-chatbot-donyu.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "url": "https://notemo.net/"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "株式会社ノテモ",
-      "logo": { "@type": "ImageObject", "url": "https://notemo.net/images/logo.webp" }
+      "url": "https://notemo.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://notemo.net/images/logo.webp"
+      }
     }
   }
   </script>
@@ -58,12 +83,16 @@
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVM958CR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- ヘッダー -->
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="../index.html" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+        <a href="../" class="header__logo" aria-label="株式会社ノテモ トップページへ">
           <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
           <div class="header__logo-sub">株式会社ノテモ</div>
         </a>
@@ -71,7 +100,7 @@
           <ul class="header__nav-list">
             <li><a href="../services.html">サービス</a></li>
             <li><a href="../cases.html">事例・実績</a></li>
-            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="./">ブログ</a></li>
             <li><a href="../company.html">会社概要</a></li>
           </ul>
           <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
@@ -82,11 +111,11 @@
       </div>
     </div>
   </header>
-  <div class="header__sp-menu" role="navigation">
+  <div class="header__sp-menu" role="navigation" aria-label="スマートフォンメニュー">
     <ul>
       <li><a href="../services.html">サービス</a></li>
       <li><a href="../cases.html">事例・実績</a></li>
-      <li><a href="../blog/index.html">ブログ</a></li>
+      <li><a href="./">ブログ</a></li>
       <li><a href="../company.html">会社概要</a></li>
       <li><a href="../contact.html">お問い合わせ</a></li>
     </ul>
@@ -99,7 +128,7 @@
       <nav class="breadcrumb" aria-label="パンくずリスト">
         <ol>
           <li><a href="../">ホーム</a></li>
-          <li><a href="../blog/index.html">ブログ</a></li>
+          <li><a href="./">ブログ</a></li>
           <li>カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術</li>
         </ol>
       </nav>
@@ -107,10 +136,11 @@
       <!-- 記事ヘッダー -->
       <header class="article-header">
         <div class="article-meta">
-          <span class="tag">EC</span>
+          <a href="./#EC" class="tag">EC</a>
           <time datetime="2026-07-02">2026年07月02日</time>
         </div>
         <h1>カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術</h1>
+        <figure class="article-eyecatch"><img src="../images/ogp/2026-07-02-ec-chatbot-donyu.webp" alt="カゴ落ちを決済・送料・サイズ別に防ぐECチャットボット導入術" width="1200" height="630" fetchpriority="high"></figure>
       </header>
 
       <!-- 記事レイアウト -->
@@ -119,7 +149,7 @@
         <!-- 本文 -->
         <article class="article-body">
 
-<h3>この記事の要点</h3>
+<p class="article-summary__title">この記事の要点</p>
 <p>EC チャットボット 導入でカゴ落ちを防ぐには、決済不安・送料や追加費用・サイズ不安・登録の手間という離脱要因ごとに、会話シナリオを設計することが重要です。本記事では、発話トリガー・提示情報・分岐・CTA の設計手順に加え、型の選び方、有人連携、KPI 設定まで、中小 EC の実務目線で解説します。</p>
 <p><strong>ポイント</strong></p>
 <ul>
@@ -269,6 +299,55 @@
 
       </div><!-- /.article-layout -->
 
+      <!-- RELATED-START -->
+      <section class="article-related" aria-labelledby="related-title">
+        <div class="article-service-cta">
+          <p class="article-service-cta__label">この記事のテーマに関するご支援</p>
+          <p>自社ECの運営、CRM・メルマガ・SNS活用、運営体制づくりまで伴走します。</p>
+          <a href="../services.html#ec" class="btn btn--outline">EC支援の内容を見る</a>
+        </div>
+        <h2 id="related-title" class="article-related__title">関連記事</h2>
+        <div class="grid-3 blog-grid">
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-08-25-ec-shohin-setsumeibun-ai.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-08-25">2026.08.25</time>
+                <a href="./#EC" class="tag blog-card-v2__tag">EC</a>
+              </div>
+              <h3><a href="2026-08-25-ec-shohin-setsumeibun-ai.html" class="blog-card-v2__title-link">EC商品説明文を生成AIで作る｜公開前の確認工程と担当の決め方</a></h3>
+              <p class="blog-card-v2__excerpt">ECの商品説明文を生成AIで下書きできるようになったあと、多くの店舗が「これを公開してよいのか」で止まります。本記事はその判断を工程に落とします。確認する観点を五つに固定し、商品…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-06-03-ec-sns-katsuyo.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-06-03">2026.06.03</time>
+                <a href="./#EC" class="tag blog-card-v2__tag">EC</a>
+              </div>
+              <h3><a href="2026-06-03-ec-sns-katsuyo.html" class="blog-card-v2__title-link">ECのSNS集客と運用設計｜売上につなげる導線とAI活用法</a></h3>
+              <p class="blog-card-v2__excerpt">ECのSNS集客と運用は、フォロワーを増やすことよりも「売上につながる導線をどう設計するか」で成果が分かれます。本記事では、転換率の低い土台にSNSで人を流しても売れない理由から…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-07-22-ai-customer-support.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-07-22">2026.07.22</time>
+                <a href="./#AI%E6%B4%BB%E7%94%A8" class="tag blog-card-v2__tag">AI活用</a>
+              </div>
+              <h3><a href="2026-07-22-ai-customer-support.html" class="blog-card-v2__title-link">AIカスタマーサポートの役割分担とエスカレーション動線設計ガイド</a></h3>
+              <p class="blog-card-v2__excerpt">AIカスタマーサポートを導入したのに「かえって現場が混乱した」という声は少なくありません。その多くは、AIと有人オペレーターの役割分担と、AIから人へ引き継ぐエスカレーション動線…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- RELATED-END -->
+
     </div><!-- /.container -->
 
     <!-- CTAバナー -->
@@ -299,7 +378,7 @@
           <ul>
             <li><a href="../services.html">サービス</a></li>
             <li><a href="../cases.html">事例・実績</a></li>
-            <li><a href="../blog/index.html">ブログ</a></li>
+            <li><a href="./">ブログ</a></li>
             <li><a href="../company.html">会社概要</a></li>
             <li><a href="../contact.html">お問い合わせ</a></li>
           </ul>
