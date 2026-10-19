@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MVM958CR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- SEO ※記事ごとに編集 -->
+  <title>メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順｜ノテモ</title>
+  <meta name="description" content="メルマガの迷惑メール対策を、開封率が急に落ちたときの手順として解説。計測の揺れか不達かを見分け、SPF・DKIM・DMARCの認証→配信リスト→配信量の順に原因を切り分けます。Gmailの送信者要件の範囲や、社内で直せる範囲と外部に頼む目安も整理します。">
+  <link rel="canonical" href="https://notemo.net/blog/2026-10-19-merumaga-meiwaku-mail-taisaku.html">
+
+  <!-- OGP ※記事ごとに編集 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://notemo.net/blog/2026-10-19-merumaga-meiwaku-mail-taisaku.html">
+  <meta property="og:title"       content="メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順｜ノテモ">
+  <meta property="og:description" content="メルマガの迷惑メール対策を、開封率が急に落ちたときの手順として解説。計測の揺れか不達かを見分け、SPF・DKIM・DMARCの認証→配信リスト→配信量の順に原因を切り分けます。Gmailの送信者要件の範囲や、社内で直せる範囲と外部に頼む目安も整理します。">
+  <meta property="og:image"       content="https://notemo.net/images/ogp/2026-10-19-merumaga-meiwaku-mail-taisaku.webp">
+  <meta property="og:site_name"   content="株式会社ノテモ">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+
+
+  <!-- 構造化データ: Article ※記事ごとに編集 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順",
+    "description": "メルマガの迷惑メール対策を、開封率が急に落ちたときの手順として解説。計測の揺れか不達かを見分け、SPF・DKIM・DMARCの認証→配信リスト→配信量の順に原因を切り分けます。Gmailの送信者要件の範囲や、社内で直せる範囲と外部に頼む目安も整理します。",
+    "image": [
+      "https://notemo.net/images/ogp/2026-10-19-merumaga-meiwaku-mail-taisaku.webp"
+    ],
+    "datePublished": "2026-10-19",
+    "dateModified": "2026-10-19",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://notemo.net/blog/2026-10-19-merumaga-meiwaku-mail-taisaku.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "url": "https://notemo.net/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "株式会社ノテモ",
+      "url": "https://notemo.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://notemo.net/images/logo.webp"
+      },
+      "publishingPrinciples": "https://notemo.net/editorial-policy.html"
+    }
+  }
+  </script>
+  <!-- 構造化データ: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",       "item": "https://notemo.net/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ",       "item": "https://notemo.net/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVM958CR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="../" class="header__logo" aria-label="株式会社ノテモ トップページへ">
+          <div class="header__logo-text"><span class="bold">n</span><span class="light">o</span><span class="bold">t</span><span class="light">e</span><span class="bold">m</span><span class="light">o</span></div>
+          <div class="header__logo-sub">株式会社ノテモ</div>
+        </a>
+        <nav class="header__nav" aria-label="グローバルナビゲーション">
+          <ul class="header__nav-list">
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="./">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+          </ul>
+          <a href="../contact.html" class="btn btn--primary">お問い合わせ</a>
+        </nav>
+        <button class="header__hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__sp-menu" role="navigation" aria-label="スマートフォンメニュー">
+    <ul>
+      <li><a href="../services.html">サービス</a></li>
+      <li><a href="../cases.html">事例・実績</a></li>
+      <li><a href="./">ブログ</a></li>
+      <li><a href="../company.html">会社概要</a></li>
+      <li><a href="../contact.html">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol>
+          <li><a href="../">ホーム</a></li>
+          <li><a href="./">ブログ</a></li>
+          <li>メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順</li>
+        </ol>
+      </nav>
+
+      <!-- 記事ヘッダー -->
+      <header class="article-header">
+        <div class="article-meta">
+          <a href="./#EC" class="tag">EC</a>
+          <time datetime="2026-10-19">2026年10月19日</time>
+        </div>
+        <h1>メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順</h1>
+        <figure class="article-eyecatch"><img src="../images/ogp/2026-10-19-merumaga-meiwaku-mail-taisaku.webp" alt="メルマガの迷惑メール対策：開封率が急に落ちたときに原因を切り分けて直す手順" width="1200" height="630" fetchpriority="high"></figure>
+      </header>
+
+      <!-- 記事レイアウト -->
+      <div class="article-layout">
+
+        <!-- 本文 -->
+        <article class="article-body">
+
+<p class="article-summary__title">この記事の要点</p>
+<p>メルマガの開封率が急に落ちたとき、原因を思いつく順に探すと遠回りです。本記事はメルマガの迷惑メール対策を切り分けの手順として整理し、数字のずれか不達かを見分けてから、送信ドメイン認証、配信リスト、配信量の順に確かめ、社内で直せる範囲と外部に頼む範囲も示します。</p>
+<p><strong>ポイント</strong></p>
+<ul>
+<li>テスト送信と指標の並べ比べで、計測の揺れか届いていないのかを見分ける</li>
+<li>「メッセージのソースを表示」で、DNSを触らずに認証結果を確かめる</li>
+<li>Gmailの要件は全送信者向けと1日5,000件以上向けに分かれる</li>
+<li>古い宛先・配信エラー・迷惑報告と、配信量・配信停止の導線を順に点検する</li>
+</ul>
+<p>開封率だけががくんと落ちた。お客様から「迷惑メールフォルダに入っていた」と言われた。兼任の担当者によくある困りごとです。</p>
+<p>件名を変えても戻らないことがあります。届くかどうかは、送信側の設定、名簿、送り方、受信側の判定が重なって決まるからです。本記事ではメルマガの迷惑メール対策を「確かめる順番」に落とし込みます。要件や数値の確認時点は2026年10月です。</p>
+<h2 id="section-1">開封率が急に落ちたら、まず「届いていない」のか「数字がずれた」のかを見分ける</h2>
+<p>原因探しの前に、本当に届かなくなったのか、開封の数え方が変わっただけなのかを見分けます。この結果で、次の章以降のどこから確かめるかが決まります。</p>
+<h3>この記事が役立つ症状チェック</h3>
+<p>一つでも当てはまれば、この先の手順が役立ちます。</p>
+<ul>
+<li>ある配信回から開封率が急に落ち、その後も戻らない</li>
+<li>顧客から「届かない」「迷惑メールフォルダに入っていた」と言われた</li>
+<li>管理画面で配信エラーの件数が増えている</li>
+<li>Gmailなど、特定のメールサービス宛てだけ数字が落ちている</li>
+</ul>
+<h3>迷惑メールフォルダに入っていないか、自分のアドレスへのテスト送信で確かめる</h3>
+<p>最初の実測は無料で、今日できます。自分のGmail、Yahoo!メール、携帯キャリアのアドレスに本番と同じ設定で送り、受信トレイ、迷惑メールフォルダ、プロモーションタブのどこに入ったかを記録します。</p>
+<h3>開封率・クリック率・配信エラー数・配信停止数を同じ配信回で並べる</h3>
+<p>急落した回と前の数回の数字を並べて読み分けます。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>並べた結果</th>
+  <th>考えられること</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>開封率だけが落ち、クリックや売上は横ばい</td>
+  <td>開封の数え方が揺れた可能性</td>
+</tr>
+<tr>
+  <td>開封率もクリックも落ちた</td>
+  <td>届いていない可能性</td>
+</tr>
+<tr>
+  <td>配信エラーや配信停止も増えた</td>
+  <td>名簿や送り方の問題の可能性</td>
+</tr>
+</tbody>
+</table></div>
+<p>比べる相手は、自社の過去の配信回です。</p>
+<h3>開封の数え方そのものが揺れるケース（Appleのメールプライバシー保護）</h3>
+<p>開封は一般に、本文中の小さな画像の読み込みで数えるため、画像を読み込まない環境では読まれても数えられません。逆にAppleは、Macの「メール」で「アクティビティを保護」を有効にすると、リモートコンテンツが表示時ではなく受信時に読み込まれると説明しています（出典: Apple「Macの『メール』でメールのプライバシーを保護する」 <a href="https://support.apple.com/ja-jp/guide/mail/mlhlp1205/mac" target="_blank" rel="noopener">https://support.apple.com/ja-jp/guide/mail/mlhlp1205/mac</a> ／2026年10月確認）。この場合は読まれていなくても開封と数えられる可能性があり、受信者の環境や配信サービスの数え方が変われば、届き方が同じでも開封率は動きます。</p>
+<h2 id="section-2">原因を切り分ける順番：直前の変更点→認証→配信リスト→配信量</h2>
+<p>届いていない疑いが残ったら、直前の変更点から当たりをつけ、認証、配信リスト、配信量の順に確かめます。</p>
+<h3>急落の直前に変えたことを書き出す</h3>
+<p>配信サービスやカートの乗り換え、送信元アドレスの変更、休眠宛先への一斉配信、配信数の増加がなかったかを振り返ります。急落と時期が重なる変更が最有力の候補です。</p>
+<h3>症状別の当たりのつけ方早見表</h3>
+<p>症状ごとに、疑う原因と最初に見る章を対応させました。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>症状</th>
+  <th>疑う原因</th>
+  <th>最初に見る章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>全員宛てで落ちた</td>
+  <td>送信ドメイン認証、送信元の変更</td>
+  <td>確認1</td>
+</tr>
+<tr>
+  <td>Gmail宛てだけ落ちた</td>
+  <td>送信者要件、迷惑メール率</td>
+  <td>確認1・2</td>
+</tr>
+<tr>
+  <td>ある日以降に落ちた</td>
+  <td>その日の変更点</td>
+  <td>この章</td>
+</tr>
+<tr>
+  <td>配信エラーが増えた</td>
+  <td>配信リスト</td>
+  <td>確認2</td>
+</tr>
+<tr>
+  <td>開封だけ落ちた</td>
+  <td>計測の揺れ</td>
+  <td>前の章</td>
+</tr>
+<tr>
+  <td>届くのに開かれない</td>
+  <td>件名・本文</td>
+  <td>確認3</td>
+</tr>
+</tbody>
+</table></div>
+<h3>この順番で確かめる理由</h3>
+<p>筆者がこの順番をすすめるのは、無料で短時間に確かめられるものから進めたいことと、メルマガの迷惑メール対策では送信ドメイン認証がすべての配信の土台になるからです。Googleは2024年2月1日から、Gmail宛てに送るすべての送信者にSPFまたはDKIMの設定を求めています（出典: Google「メール送信者のガイドライン」 <a href="https://support.google.com/a/answer/81126?hl=ja" target="_blank" rel="noopener">https://support.google.com/a/answer/81126?hl=ja</a> ／2026年10月確認）。</p>
+<h2 id="section-3">【確認1】送信ドメイン認証：届いたメールでSPF・DKIM・DMARCの結果を見る</h2>
+<p>メルマガの迷惑メール対策で最初に確かめるのは、送信元が本物だと示す送信ドメイン認証です。DNSを触らずに、届いたメールで確かめられます。</p>
+<h3>SPF・DKIM・DMARCを1文ずつ言い換えると</h3>
+<ul>
+<li>SPF：このサーバーからなら、このドメインのメールを送ってよいという名簿</li>
+<li>DKIM：メールに付ける電子署名で、途中で書き換えられていないことを示すもの</li>
+<li>DMARC：認証できなかったメールの扱いを、送信側が宣言する仕組み</li>
+</ul>
+<h3>Gmailの「メッセージのソースを表示」で認証結果を確かめる</h3>
+<p>自分のGmailに届いたメルマガをブラウザで開き、「その他」から「メッセージのソースを表示」を選びます（出典: Gmail ヘルプ「詳細ヘッダーからメールの経路を確認する」 <a href="https://support.google.com/mail/answer/29436?hl=ja" target="_blank" rel="noopener">https://support.google.com/mail/answer/29436?hl=ja</a> ／2026年10月確認）。ヘッダーには認証結果が含まれます（出典: Google Workspace ヘルプ「DMARC に関する問題のトラブルシューティング」 <a href="https://knowledge.workspace.google.com/admin/security/troubleshoot-dmarc-issues?hl=ja" target="_blank" rel="noopener">https://knowledge.workspace.google.com/admin/security/troubleshoot-dmarc-issues?hl=ja</a> ／2026年10月確認）。FAILや項目がなければ設定の確認が必要です。PASSでも、DKIMの署名ドメイン（「d=」の後ろ）が送信元アドレスのドメインと違えば、独自ドメイン認証が済んでいない可能性があります。</p>
+<h3>Gmail・Yahooの送信者要件：すべての送信者向けと大量送信者向けの違い</h3>
+<p>Gmailの要件は二段に分かれます（出典: Google「メール送信者のガイドライン」 ／2026年10月確認）。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>対象</th>
+  <th>主な要件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>すべての送信者</td>
+  <td>SPFまたはDKIM、TLS接続（通信の暗号化）、迷惑メール率0.3%未満 ほか</td>
+</tr>
+<tr>
+  <td>1日5,000件以上</td>
+  <td>SPFとDKIMの両方、DMARC、Fromの一致、ワンクリックの登録解除</td>
+</tr>
+</tbody>
+</table></div>
+<p>「Fromの一致」とは、送信元アドレスのドメインがSPFかDKIMで認証されたドメインと一致することです。大量送信者は個人用Gmail宛てに24時間で5,000件前後かそれ以上を送る送信者で、同じドメインの分は合算され、一度当てはまるとその後も同じ扱いです。2025年11月以降は、要件を満たさないメールの拒否などの措置を強めています（出典: Google「メール送信者のガイドラインに関するよくある質問」 <a href="https://support.google.com/a/answer/14229414?hl=ja" target="_blank" rel="noopener">https://support.google.com/a/answer/14229414?hl=ja</a> ／2026年10月確認）。Yahooも公式ガイドで似た要件を示していますが、大量送信者の件数の基準は示していません（出典: Yahoo「Sender Best Practices」 <a href="https://senders.yahooinc.com/best-practices/" target="_blank" rel="noopener">https://senders.yahooinc.com/best-practices/</a> ／2026年10月確認）。日本のYahoo!メールに同じ基準が当てはまるかは、この資料からは分かりません。</p>
+<h3>不合格・未設定だったときに直す場所</h3>
+<p>直す場所は、送信元ドメインのDNS（ドメインの設定情報）と、配信サービス側の独自ドメイン認証の設定です。</p>
+<h2 id="section-4">【確認2】配信リスト：古い宛先・配信エラー・迷惑報告がたまっていないか</h2>
+<p>認証に問題がなければ、次は名簿です。古い宛先や配信エラー、迷惑メールの報告がたまると、正しく設定された配信でも受信トレイに届きにくくなります。</p>
+<h3>届かない原因として配信エラー（戻ってきたメール）が増えていないか</h3>
+<p>配信エラー（バウンス）とは、宛先不明などで届かずに戻ってきたメールです。急落した回と過去の回のエラー件数を比べ、何度もエラーになる宛先は配信対象から外します。</p>
+<h3>長く開かれていない宛先を分けて扱う</h3>
+<p>長く開封も購入もない宛先は、いきなり削除せず別のグループに分けます。区切る期間は、自社の購買周期や開封履歴で決めます。</p>
+<h3>迷惑メール報告の割合をGoogle Postmaster Toolsで見る</h3>
+<p>Google Postmaster Toolsでは、個人用Gmail宛てのメールの迷惑メール率や認証結果を確認できます。送信量が少ないと一部のデータが出ず、使い始めにはDNSでのドメイン所有権の確認が必要です（出典: Google「Postmaster Tools のセットアップ」 <a href="https://support.google.com/a/answer/9981691?hl=ja" target="_blank" rel="noopener">https://support.google.com/a/answer/9981691?hl=ja</a> ／2026年10月確認）。GoogleのFAQは、迷惑メール率は毎日計算され、大量送信者では0.1%を超えると受信トレイへの配信に悪影響が出るとしています（出典: Google「メール送信者のガイドラインに関するよくある質問」 ／2026年10月確認）。</p>
+<h3>送信元の評価（レピュテーション）を1文で言うと</h3>
+<p>受信側は送信元のドメインやIPを過去の送り方で評価しており、複数の送信者で同じ送信元IPを使う配信サービスでは、他の送信者の影響を受ける可能性もあります。</p>
+<h2 id="section-5">【確認3】配信量と配信停止の導線：急に増やしていないか、止めやすいか</h2>
+<p>認証と名簿の次は、送り方そのものです。配信数を急に変えていないか、受け取った人が配信を止めやすいかを確かめ、最後に件名と本文に進みます。</p>
+<h3>配信数・頻度・時間帯を急に変えていないか</h3>
+<p>セール時の臨時配信、配信回数の追加、送信時刻の変更を急落の時期と照らし合わせ、重なるなら配信量を戻して様子を見ます。</p>
+<h3>休眠宛先や新しい名簿には小分けで送る</h3>
+<p>しばらく送っていない宛先や新しく集めた名簿は、一斉に送らず、反応のよい宛先から少しずつ広げるのが一般的な考え方です。</p>
+<h3>配信停止の導線と、法律で求められる表示</h3>
+<p>止めにくいメールは、迷惑メールとして報告されやすいと考えられます。Gmailは1日5,000件以上の送信者にワンクリックの登録解除と本文中の解除リンクを求め、解除依頼への48時間以内の対応を推奨しています（出典: Google「メール送信者のガイドラインに関するよくある質問」 ／2026年10月確認）。ワンクリックの登録解除は配信サービス側で対応するものなので、設定の有無を確認します。</p>
+<p>特定電子メール法では、広告メールに原則として事前の同意と、送信者名や受信拒否の連絡先の表示が求められます（出典: 迷惑メール相談センター「特定電子メール法」 <a href="https://www.dekyo.or.jp/soudan/contents/taisaku/1-2.html" target="_blank" rel="noopener">https://www.dekyo.or.jp/soudan/contents/taisaku/1-2.html</a> ／2026年10月確認）。</p>
+<h3>3つとも問題がなければ件名と本文を見直す</h3>
+<p>それでも開かれないなら、件名や中身の見直しです。配信設計は<a href="https://notemo.net/blog/2026-06-02-ec-crm-merumaga-ltv.html">ECのCRM・メルマガでLTVを上げる方法</a>で扱っています。</p>
+<h2 id="section-6">社内で直せる範囲と、配信サービス・ドメイン管理者・専門家に相談する目安</h2>
+<p>原因の見当がついたら、誰が直すかを決めます。自分でできる作業と、配信サービスやドメイン管理者に頼む作業を分けます。</p>
+<h3>担当者が自分で確かめて直せること</h3>
+<p>テスト送信、認証結果の確認、配信エラー宛先の除外、配信数の調整、配信停止リンクの確認は、担当者が進められます。</p>
+<h3>配信の仕組み別の相談先（カート付属のメール機能／専用の配信サービス）</h3>
+<p>カート付属のメール機能でも専用サービスでも、送信の仕組みは事業者側にあるため、独自ドメインで認証できるかは各社のヘルプで確認します。カート選びの全体像は<a href="https://notemo.net/blog/2026-05-23-shopify-base-stores-hikaku.html">Shopify・BASE・STORESの比較</a>で扱っています。</p>
+<h3>DNSの変更はドメイン管理者へ：依頼時に伝える情報</h3>
+<p>ドメイン管理者とは、制作会社や情報システム担当など、ドメインの設定を変更できる人です。依頼時は次をそろえると話が早く進みます。</p>
+<ul>
+<li>送信に使っているサービス名と送信元アドレス</li>
+<li>ヘッダーで見た認証結果</li>
+<li>配信サービスが示している設定値</li>
+<li>Postmaster Toolsの所有権確認をするかどうか</li>
+</ul>
+<h3>外部の専門家に相談したほうがよい目安と、相談前にまとめる切り分けメモ</h3>
+<p>誰がドメインを管理しているか分からない、複数のサービスが同じドメインから送っている、設定を直しても戻らない。筆者は、こうした場合は外部に相談したほうが早いと考えます。メルマガの迷惑メール対策を相談するときは、テスト送信の届き先、指標の並び、認証結果、直前の変更点を一枚のメモにまとめておくと伝わりやすくなります。</p>
+<h2 id="section-7">よくある質問</h2>
+<p>最後に、切り分けの途中で迷いやすい点をまとめます。要件の対象範囲や顧客への案内など、本文で扱いきれなかった点を補います。</p>
+<h3>Q1. 1日の配信が5,000件未満なら、Gmailの要件は気にしなくてよいですか？</h3>
+<p>いいえ。SPFまたはDKIMの設定や迷惑メール率0.3%未満は、件数に関係なくすべての送信者に求められています。5,000件は追加の要件がかかる基準で、セールなどで一度超えると、その後も大量送信者の扱いになります。</p>
+<h3>Q2. DMARCを設定すれば、迷惑メールフォルダに入らなくなりますか？</h3>
+<p>認証は前提条件にすぎず、迷惑メールの報告や名簿の状態も影響するため、必ず入らなくなるとは言えません。</p>
+<h3>Q3. 顧客から「迷惑メールフォルダに入っていた」と言われたら、何を伝えればよいですか？</h3>
+<p>受信側の操作は各メールサービスのヘルプを案内し、使っているサービスと受信日時を聞いておきます。</p>
+<h3>Q4. 開封率は何%を下回ったら異常と考えればよいですか？</h3>
+<p>外部の平均値より、自社の過去の配信回との比較で急な変化を見るのが確実です。</p>
+<h3>Q5. 配信サービスを乗り換えた直後に落ちた場合、元のサービスに戻すべきですか？</h3>
+<p>戻す前に、新しいサービスで独自ドメインの認証とDNSの設定が済んでいるかを確かめてください。この設定漏れが有力な候補です。</p>
+<h2 id="section-8">まとめ</h2>
+<p>メルマガの迷惑メール対策は、思いつく施策を試すより、順番に確かめるほうが早く終わります。</p>
+<p>開封率が急に落ちたら、計測の揺れの確認から始め、送信ドメイン認証→配信リスト→配信量の順に確かめると、原因の見当をつけやすくなります。自社で一通り確認しても改善しない場合や、配信の仕組みそのものを見直したい場合は、切り分けメモを手元に、外部の支援を検討してください。</p>
+
+
+        </article>
+
+        <!-- サイドバー -->
+        <aside class="article-sidebar">
+          <div class="sidebar-card toc">
+            <h3>目次</h3>
+            <ol>
+              <li><a href="#section-1">開封率が急に落ちたら、まず「届いていない」のか「数字がずれた」のかを見分ける</a></li>
+              <li><a href="#section-2">原因を切り分ける順番：直前の変更点→認証→配信リスト→配信量</a></li>
+              <li><a href="#section-3">【確認1】送信ドメイン認証：届いたメールでSPF・DKIM・DMARCの結果を見る</a></li>
+              <li><a href="#section-4">【確認2】配信リスト：古い宛先・配信エラー・迷惑報告がたまっていないか</a></li>
+              <li><a href="#section-5">【確認3】配信量と配信停止の導線：急に増やしていないか、止めやすいか</a></li>
+              <li><a href="#section-6">社内で直せる範囲と、配信サービス・ドメイン管理者・専門家に相談する目安</a></li>
+              <li><a href="#section-7">よくある質問</a></li>
+              <li><a href="#section-8">まとめ</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-card">
+            <h3>お問い合わせ</h3>
+            <p style="font-size:13px; color:var(--color-sub); margin-bottom:var(--space-sm);">EC・DX・AIについてお気軽にご相談ください。</p>
+            <a href="../contact.html" class="btn btn--primary" style="width:100%; justify-content:center;">無料相談する</a>
+          </div>
+        </aside>
+
+      </div><!-- /.article-layout -->
+
+      <!-- RELATED-START -->
+      <section class="article-related" aria-labelledby="related-title">
+        <p class="article-policy">記事の作り方（生成AIの利用を含む）と出典の方針は<a href="../editorial-policy.html">編集方針</a>をご覧ください。</p>
+        <div class="article-service-cta">
+          <p class="article-service-cta__label">この記事のテーマに関するご支援</p>
+          <p>自社ECの運営、CRM・メルマガ・SNS活用、運営体制づくりまで伴走します。</p>
+          <a href="../services.html#ec" class="btn btn--outline">EC支援の内容を見る</a>
+        </div>
+        <h2 id="related-title" class="article-related__title">関連記事</h2>
+        <div class="grid-3 blog-grid">
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-10-19-ec-zaiko-zure-urikoshi.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-10-19">2026.10.19</time>
+                <a href="./#EC" class="tag blog-card-v2__tag">EC</a>
+              </div>
+              <h3><a href="2026-10-19-ec-zaiko-zure-urikoshi.html" class="blog-card-v2__title-link">ECの在庫ずれで売り越しが起きる5パターンと、症状からの見分け方・直し方</a></h3>
+              <p class="blog-card-v2__excerpt">ECの在庫ずれによる売り越しが特定の場面でだけ起きるなら、セット商品、予約商品、実店舗との併売、色やサイズ違いの商品コード、返品処理の五つのパターンを疑うと切り分けが早くなります…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-08-25-ec-shohin-setsumeibun-ai.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-08-25">2026.08.25</time>
+                <a href="./#EC" class="tag blog-card-v2__tag">EC</a>
+              </div>
+              <h3><a href="2026-08-25-ec-shohin-setsumeibun-ai.html" class="blog-card-v2__title-link">EC商品説明文を生成AIで作る｜公開前の確認工程と担当の決め方</a></h3>
+              <p class="blog-card-v2__excerpt">ECの商品説明文を生成AIで下書きできるようになったあと、多くの店舗が「これを公開してよいのか」で止まります。本記事はその判断を工程に落とします。確認する観点を五つに固定し、商品…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+          <article class="blog-card-v2">
+            <div class="blog-card-v2__thumb"><img src="../images/ogp/2026-10-19-seiseiai-koka-sokutei.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></div>
+            <div class="blog-card-v2__body">
+              <div class="blog-card-v2__meta">
+                <time class="blog-card-v2__date" datetime="2026-10-19">2026.10.19</time>
+                <a href="./#AI%E6%B4%BB%E7%94%A8" class="tag blog-card-v2__tag">AI活用</a>
+              </div>
+              <h3><a href="2026-10-19-seiseiai-koka-sokutei.html" class="blog-card-v2__title-link">生成AIの効果測定｜経営層に「効果は？」と聞かれて答えられないときの測り方と報告の型</a></h3>
+              <p class="blog-card-v2__excerpt">生成AIを導入して数か月、経営層から「で、効果は？」と聞かれても、手元にあるのは利用率くらい。そんな推進担当者に向けて、答えられない原因を四つに切り分け、導入前の記録がなくても今…</p>
+              <span class="blog-card-v2__more" aria-hidden="true">続きを読む →</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- RELATED-END -->
+
+    </div><!-- /.container -->
+
+    <!-- CTAバナー -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div class="cta-banner__text">
+            <h2>まずはご相談ください</h2>
+            <p>課題を整理するだけでも構いません。お気軽にお問い合わせください。</p>
+          </div>
+          <a href="../contact.html" class="btn btn--white btn--lg">無料相談を申し込む</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="logo-text">株式会社ノテモ</div>
+          <p>EC支援・業務DX・AI活用の3領域で<br>中小企業の成長を伴走型でサポートします。</p>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="../services.html">サービス</a></li>
+            <li><a href="../cases.html">事例・実績</a></li>
+            <li><a href="./">ブログ</a></li>
+            <li><a href="../company.html">会社概要</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <h3>Contact</h3>
+          <p>お気軽にお問い合わせください。</p>
+          <a href="../contact.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8);">お問い合わせはこちら</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; <span id="year"></span> 株式会社ノテモ All Rights Reserved.</p>
+        <div class="footer__bottom-links"><a href="../privacy.html">プライバシーポリシー</a><a href="../editorial-policy.html">編集方針</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
