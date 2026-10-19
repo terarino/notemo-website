@@ -1632,3 +1632,71 @@ a.tag:hover {
   color: var(--color-accent);
   font-weight: 600;
 }
+
+/* ============================================================
+   固定ページの関連記事 (services.html / cases.html — site_tools.py が POSTS マーカー間を生成)
+   ============================================================ */
+
+.posts-block {
+  margin-top: var(--space-lg);
+}
+
+.posts-block__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: var(--space-sm);
+}
+
+.posts-block .blog-grid {
+  margin-top: 0;
+}
+
+.posts-block__more {
+  margin-top: var(--space-sm);
+  text-align: right;
+  font-size: 14px;
+}
+
+.posts-block__more a {
+  color: var(--color-accent-text);
+  font-weight: 600;
+}
+
+.case-posts {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px dashed var(--color-border);
+}
+
+.case-posts__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 4px;
+}
+
+.case-posts ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+
+.case-posts li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.case-posts a {
+  color: var(--color-accent-text);
+}
+
+/* 記事末尾の編集方針への一文 (site_tools.py が RELATED ブロック先頭に生成) */
+.article-policy {
+  font-size: 13px;
+  color: var(--color-sub);
+  margin-bottom: var(--space-md);
+}
+
+.article-policy a {
+  color: var(--color-accent-text);
+}

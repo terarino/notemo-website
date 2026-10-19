@@ -2,31 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://notemo.net/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/services.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/cases.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/company.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/contact.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/privacy.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://notemo.net/editorial-policy.html</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/blog/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/blog/2026-08-25-ec-shohin-setsumeibun-ai.html</loc>
@@ -78,7 +82,7 @@
   </url>
   <url>
     <loc>https://notemo.net/blog/2026-05-23-it-hojokin-2026-katsuyo.html</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/blog/2026-05-23-chusho-dx-shippai.html</loc>
@@ -94,10 +98,10 @@
   </url>
   <url>
     <loc>https://notemo.net/blog/2026-04-08-sme-ai-utilization.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://notemo.net/blog/2026-04-08-jishaec-vs-mall-ec.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
 </urlset>
